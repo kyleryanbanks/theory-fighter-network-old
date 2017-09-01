@@ -17,9 +17,10 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "tfn",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "tfn.theme.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
