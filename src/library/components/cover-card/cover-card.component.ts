@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'tfn-cover-card',
   templateUrl: './cover-card.component.html',
-  styleUrls: ['./cover-card.component.css']
+  styleUrls: ['./cover-card.component.scss']
 })
 export class CoverCardComponent implements OnInit {
+  @Input() title: String
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClick() {
+    console.log('card clicked')
+  }
+
+  onFavorite() {
+    console.log('fav clicked')
+  }
+
+  onBookmark() {
+    console.log('bookmark clicked')
+  }
+
+  onShare() {
+    console.log('share clicked')
+  }
 }

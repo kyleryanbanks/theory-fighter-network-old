@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'tfn-shelf',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shelf.component.css']
 })
 export class ShelfComponent implements OnInit {
+  @Input() notebooks: any[]
 
   constructor() { }
 
