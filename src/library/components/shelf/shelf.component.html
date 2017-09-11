@@ -1,6 +1,6 @@
 <section>
   <span class="mat-title">{{shelf.title}}</span>
-  <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center">
     <tfn-cover-card *ngFor="let notebook of shelf.notebooks" [notebook]="notebook"
       fxFlex="0 0 150px"></tfn-cover-card>
   </div>
