@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./shelf.component.css']
 })
 export class ShelfComponent implements OnInit {
-  @Input() notebooks: any[]
+  @Input() shelf: any[]
 
   constructor() { }
 

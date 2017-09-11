@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cover-card.component.scss']
 })
 export class CoverCardComponent implements OnInit {
-  @Input() title: String
+  @Input() notebook: Object
 
   constructor() { }
 

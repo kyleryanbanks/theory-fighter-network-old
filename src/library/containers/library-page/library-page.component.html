@@ -1,5 +1,5 @@
 <tfn-nav-bar title="Library"></tfn-nav-bar>
 
-<div>
-    <tfn-cover-card title="Marvel vs. Capcom: Infinite"></tfn-cover-card>
+<div fxLayout="column">
+    <tfn-shelf *ngFor="let shelf of shelves" [shelf]="shelf"></tfn-shelf>
 </div>

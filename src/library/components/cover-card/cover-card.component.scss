@@ -2,32 +2,47 @@
 
 @import '~@tfn/core/theming/tfn.theme.scss';
 
+
+:host {
+    margin: 1rem;
+}
+
 md-card {
     width: 150px;
+    height: 255px;
     border-radius: 5px;
-    padding: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     cursor: pointer;
 }
 
 img {
-    width: 90%;
-    height: auto;
+    height: 150px;
+    width: auto;
     padding: .5rem;
     margin: 0 auto !important;
     border-radius: 15px;
 }
 
 md-card-actions {
-    padding: .5rem;
-}
-
-md-card-title {
-    text-align: center;
     margin: 0;
-    width: 100%;
+    padding: 0;
 }
 
 md-card-header {
-    padding: .25rem 0;
+    height: 50px;
+    width: 100%;
     background-color: mat-color($tfn-primary);
+}
+
+.banner {
+    height: 50px;
+    width: 150px;
+    background-color: mat-color($tfn-primary);
+}
+
+.title {
+    text-align: center;
+    font-size: 14px;
+    padding-top: .5rem;
 }

@@ -1,9 +1,9 @@
 <md-card>
-  <div (click)="onClick()">
-    <img md-card-image src="core/assets/images/mvci.jpg" alt="Notebook Cover Art">
-    <md-card-header>
-      <md-card-title>Marvel vs. Capcom: Infinite</md-card-title>
-    </md-card-header>
+  <div fxLayout="column" fxLayoutAlign="start center" (click)="onClick()">
+    <img md-card-image [src]="notebook.cover" alt="Notebook Cover Art">
+    <div class="banner">
+      <div class="title">{{notebook.title}}</div>
+    </div>
   </div>
   <md-card-actions fxLayout="row" fxLayoutAlign="space-around center">
     <button md-icon-button (click)="onFavorite()">
