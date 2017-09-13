@@ -15,6 +15,8 @@ import {
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import {AngularFireDatabaseModule } from 'angularfire2/database';
+
 const MATERIAL_IMPORTS = [
   MdToolbarModule,
   MdButtonModule,
@@ -24,10 +26,11 @@ const MATERIAL_IMPORTS = [
 
 @NgModule({
   imports: [
-    CoreModule,
     CommonModule,
+    CoreModule,
     FlexLayoutModule,
-    MATERIAL_IMPORTS
+    MATERIAL_IMPORTS,
+    AngularFireDatabaseModule
   ],
   declarations: [
     NavBarComponent,

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  AngularFireDatabase,
+  FirebaseListObservable
+} from 'angularfire2/database';
+import { Shelf } from '@tfn/core/models/';
 
-import { shelves, notebooks } from '@tfn/core/assets';
 
 @Component({
   selector: 'tfn-library-page',
@@ -8,9 +12,9 @@ import { shelves, notebooks } from '@tfn/core/assets';
   styleUrls: ['./library-page.component.css']
 })
 export class LibraryPageComponent implements OnInit {
-  shelves: any[] = shelves
+  shelves: Shelf[]
 
-  constructor() { }
+  constructor(db: AngularFireDatabase) { }
 
   ngOnInit() {
   }

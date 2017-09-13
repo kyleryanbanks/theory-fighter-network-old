@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
+
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from './environments/environment';
 
 /* Feature Modules */
 import { LoginModule } from './login';
@@ -11,20 +12,13 @@ import { LibraryModule } from './library';
 
 /* Providers */
 import { AuthService } from './core/services';
+import { AuthGuard } from './core/guards';
 
 /* Routing Module */
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-/* Firebase Config */
-const firebaseConfig = {
-  apiKey: 'AIzaSyBE4l_CwpQy1w1m-9i9bMd8_UhH5nYK9RE',
-  authDomain: 'theoryfighternetwork.firebaseapp.com',
-  databaseURL: 'https://theoryfighternetwork.firebaseio.com',
-  projectId: 'theoryfighternetwork',
-  storageBucket: 'theoryfighternetwork.appspot.com',
-  messagingSenderId: '596030064632'
-};
+
 
 @NgModule({
   declarations: [
@@ -35,11 +29,13 @@ const firebaseConfig = {
     AppRoutingModule,
     LibraryModule,
     LoginModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireModule.initializeApp(environment.firebase, 'theoryfighternetwork'),
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    AngularFireAuth,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

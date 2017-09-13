@@ -6,7 +6,7 @@
     </div>
   </div>
   <md-card-actions fxLayout="row" fxLayoutAlign="space-around center">
-    <button md-icon-button (click)="onFavorite()">
+    <button md-icon-button [color]="favorite? 'warn': null" (click)="onFavorite()">
       <md-icon>favorite</md-icon>
     </button>
     <button md-icon-button (click)="onBookmark()">

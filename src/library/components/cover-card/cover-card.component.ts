@@ -6,11 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cover-card.component.scss']
 })
 export class CoverCardComponent implements OnInit {
-  @Input() notebook: Object
+  @Input() notebook: any
+  favorite: Boolean
 
   constructor() { }
 
   ngOnInit() {
+    if (this.notebook) {
+      this.favorite = this.notebook.favorite
+    }
   }
 
   onClick() {
@@ -18,7 +22,8 @@ export class CoverCardComponent implements OnInit {
   }
 
   onFavorite() {
-    console.log('fav clicked')
+    console.log('favorite is now ' + this.favorite)
+    this.favorite = !this.favorite
   }
 
   onBookmark() {

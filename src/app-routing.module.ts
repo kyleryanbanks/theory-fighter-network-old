@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LibraryPageComponent } from './library';
 import { LoginPageComponent } from './login';
+import { AuthGuard } from '@tfn/core/guards';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/library',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -16,7 +17,12 @@ const routes: Routes = [
   },
   {
     path: 'library',
-    component: LibraryPageComponent
+    component: LibraryPageComponent,
+    canActivate: [ AuthGuard ]
+  },
+  {
+    path: '**',
+    redirectTo: 'login'
   }
 ];
 
