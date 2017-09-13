@@ -8,7 +8,7 @@ import { AuthGuard } from '@tfn/core/guards';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'library',
     pathMatch: 'full'
   },
   {
