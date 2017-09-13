@@ -15,7 +15,7 @@ import {
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import {AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 const MATERIAL_IMPORTS = [
   MdToolbarModule,

@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import {
+  AngularFireDatabase,
+  FirebaseObjectObservable
+} from 'angularfire2/database';
+
 @Component({
   selector: 'tfn-cover-card',
   templateUrl: './cover-card.component.html',
@@ -7,15 +12,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CoverCardComponent implements OnInit {
   @Input() notebook: any
+  notebookRef: FirebaseObjectObservable<any>
   favorite: Boolean
 
-  constructor() { }
+  constructor(
+    private db: AngularFireDatabase
+  ) { }
 
   ngOnInit() {
-    if (this.notebook) {
-      this.favorite = this.notebook.favorite
+    this.notebookRef = this.db.object(`mvci/notebooks/${this.notebook}`)
     }
-  }
 
   onClick() {
     console.log('card clicked')

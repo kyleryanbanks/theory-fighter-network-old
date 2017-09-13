@@ -1,7 +1,7 @@
 <tfn-nav-bar title="Library"></tfn-nav-bar>
 
 <div fxLayout="column">
-    <tfn-shelf *ngFor="let shelf of shelves" [shelf]="shelf"></tfn-shelf>
+    <tfn-shelf *ngFor="let shelf of shelves | async" [shelf]="shelf"></tfn-shelf>
 </div>
 
 <button md-fab><md-icon>add</md-icon></button>

@@ -3,6 +3,8 @@ import {
   AngularFireDatabase,
   FirebaseListObservable
 } from 'angularfire2/database';
+
+import { AuthService } from '@tfn/core/services';
 import { Shelf } from '@tfn/core/models/';
 
 
@@ -12,11 +14,18 @@ import { Shelf } from '@tfn/core/models/';
   styleUrls: ['./library-page.component.css']
 })
 export class LibraryPageComponent implements OnInit {
-  shelves: Shelf[]
+  uid: String
+  shelves: FirebaseListObservable<any>
 
-  constructor(db: AngularFireDatabase) { }
+
+  constructor(
+    private db: AngularFireDatabase,
+    public auth: AuthService
+  ) {}
 
   ngOnInit() {
+    this.uid = this.auth.currentUserId
+    this.shelves = this.db.list(`/users/${this.uid}/shelves`)
   }
 
 }

@@ -1,8 +1,8 @@
 <md-card>
   <div fxLayout="column" fxLayoutAlign="start center" (click)="onClick()">
-    <img md-card-image [src]="notebook.cover" alt="Notebook Cover Art">
+    <img md-card-image [src]="(notebookRef | async)?.cover.art" alt="Notebook Cover Art">
     <div class="banner">
-      <div class="title">{{notebook.title}}</div>
+      <div class="title">{{ (notebookRef | async)?.cover.title}}</div>
     </div>
   </div>
   <md-card-actions fxLayout="row" fxLayoutAlign="space-around center">
@@ -17,5 +17,7 @@
     </button>
   </md-card-actions>
 </md-card>
+
+{{ notebookRef | async | json}}
 
   

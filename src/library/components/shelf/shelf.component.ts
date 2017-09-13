@@ -11,6 +11,7 @@ export class ShelfComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.shelf)
   }
 
 }
