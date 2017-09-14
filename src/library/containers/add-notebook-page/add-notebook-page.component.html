@@ -1,0 +1,32 @@
+<h2 md-dialog-title>New Character Notebook</h2>
+
+<form [formGroup]="form">
+  <md-dialog-content>
+      <md-form-field>
+        <md-placeholder>Game</md-placeholder>
+        <input #game mdInput type="text" disabled value="Marvel vs. Capcom: Infinite">
+      </md-form-field>
+    
+      <md-form-field>
+        <md-placeholder>Title</md-placeholder>
+        <input mdInput type="text" formControlName="title">
+        <md-error>Character notebooks must have a title.</md-error>
+      </md-form-field>
+    
+      <md-form-field>
+        <md-placeholder>Character</md-placeholder>
+        <input mdInput type="text" formControlName="character" [mdAutocomplete]="charactersAuto">
+        <md-error>Must choose a valid character from {{ game.value }}.</md-error>
+      </md-form-field>
+      <md-autocomplete #charactersAuto="mdAutocomplete">
+        <md-option *ngFor="let character of filteredCharacters | async" [value]="character">
+          {{ character }}
+        </md-option>
+      </md-autocomplete>
+  </md-dialog-content>
+
+  <md-dialog-actions fxLayoutAlign="space-around center">
+    <button md-button md-dialog-close type="button">Cancel</button>
+    <button md-button md-dialog-close type="submit" [disabled]="form.invalid">Ok</button>
+  </md-dialog-actions>
+</form>

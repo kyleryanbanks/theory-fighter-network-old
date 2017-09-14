@@ -1,0 +1,13 @@
+<smd-fab-speed-dial #myFab (mouseenter)="myFab.open = true" (mouseleave)="myFab.open = false">
+  <smd-fab-trigger spin="true">
+      <button md-fab (click)="addNotebook()"
+      mdTooltip="New Notebook" mdTooltipPosition="before"><md-icon>note_add</md-icon></button>
+  </smd-fab-trigger>
+
+  <smd-fab-actions>
+      <button md-mini-fab (click)="addShelf()"
+      mdTooltip="New Shelf" mdTooltipPosition="before"><md-icon>library_add</md-icon></button>
+      <button md-mini-fab (click)="addTeam()"
+      mdTooltip="New Team Notebook" mdTooltipPosition="before"><md-icon>group_add</md-icon></button>
+  </smd-fab-actions>
+</smd-fab-speed-dial>
