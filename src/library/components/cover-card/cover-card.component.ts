@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { MdDialog } from '@angular/material';
+import { NotebookInfoPageComponent } from '@tfn/library/containers';
+import { ComingSoonComponent } from '@tfn/core/components';
+import { Router } from '@angular/router';
 import {
   AngularFireDatabase,
   FirebaseObjectObservable
@@ -12,19 +15,19 @@ import {
 })
 export class CoverCardComponent implements OnInit {
   @Input() notebook: any
-  notebookRef: FirebaseObjectObservable<any>
   favorite: Boolean
 
   constructor(
-    private db: AngularFireDatabase
+    private db: AngularFireDatabase,
+    private dialog: MdDialog,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.notebookRef = this.db.object(`mvci/notebooks/${this.notebook}`)
     }
 
   onClick() {
-    console.log('card clicked')
+    this.router.navigate([`notebook/${this.notebook.$key}`])
   }
 
   onFavorite() {
@@ -32,11 +35,11 @@ export class CoverCardComponent implements OnInit {
     this.favorite = !this.favorite
   }
 
-  onBookmark() {
-    console.log('bookmark clicked')
+  onInfo() {
+    this.dialog.open(ComingSoonComponent)
   }
 
   onShare() {
-    console.log('share clicked')
+    this.dialog.open(ComingSoonComponent)
   }
 }

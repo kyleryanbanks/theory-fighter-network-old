@@ -9,6 +9,7 @@ import { AuthService } from '@tfn/core/services';
 })
 export class NavBarComponent implements OnInit {
   @Input() title: String
+  @Input() initOpen: Boolean = false
 
   constructor(private auth: AuthService) { }
 

@@ -1,0 +1,19 @@
+<md-toolbar>
+  <button md-icon-button aria-label="Menu" (click)="sidenav.toggle()">
+    <md-icon aria-hidden="true">menu</md-icon>
+  </button>
+  {{ title }}
+  <span fxFlex="1 1 auto"></span>
+  <button md-button color="primary" (click)="onLogout()">Logout</button>
+</md-toolbar>
+
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="side" [opened]="initOpen">
+    <ng-content select=".sidebar"></ng-content>
+  </md-sidenav>
+
+  <div>
+    <ng-content select=".content"></ng-content>
+  </div>
+
+</md-sidenav-container>

@@ -17,19 +17,15 @@ import {
 import {
   LibraryPageComponent,
   AddNotebookPageComponent,
-  AddShelfPageComponent
+  AddShelfPageComponent,
+  NotebookInfoPageComponent
  } from './containers';
 import {
   ShelfComponent,
   CoverCardComponent,
-  NavBarComponent,
   LibSpeedDialComponent
 } from './components';
-import {
-  SmdFabSpeedDialTrigger,
-  SmdFabSpeedDialActions,
-  SmdFabSpeedDialComponent
-} from '@tfn/core/components';
+import {LibraryRoutingModule} from 'library/library-routing.module';
 
 const MATERIAL_IMPORTS = [
   MdToolbarModule,
@@ -49,26 +45,25 @@ const MATERIAL_IMPORTS = [
     FlexLayoutModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
+    LibraryRoutingModule,
     MATERIAL_IMPORTS
   ],
   declarations: [
-    NavBarComponent,
     LibraryPageComponent,
     CoverCardComponent,
     ShelfComponent,
     LibSpeedDialComponent,
-    SmdFabSpeedDialTrigger,
-    SmdFabSpeedDialActions,
-    SmdFabSpeedDialComponent,
     AddNotebookPageComponent,
-    AddShelfPageComponent
+    AddShelfPageComponent,
+    NotebookInfoPageComponent
   ],
   exports: [
     LibraryPageComponent
   ],
   entryComponents: [
     AddNotebookPageComponent,
-    AddShelfPageComponent
+    AddShelfPageComponent,
+    NotebookInfoPageComponent
   ]
 })
 export class LibraryModule { }

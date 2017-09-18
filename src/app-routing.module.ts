@@ -3,7 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LibraryPageComponent } from './library';
 import { LoginPageComponent } from './login';
+import { NotebookModule } from './notebook';
 import { AuthGuard } from '@tfn/core/guards';
+
+import { ComingSoonComponent } from '@tfn/core/components';
 
 const routes: Routes = [
   {
@@ -14,20 +17,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent
-  },
-  {
-    path: 'library',
-    component: LibraryPageComponent,
-    canActivate: [ AuthGuard ]
-  },
-  {
-    path: '**',
-    redirectTo: 'login'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

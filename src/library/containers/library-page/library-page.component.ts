@@ -25,7 +25,7 @@ export class LibraryPageComponent implements OnInit {
 
   ngOnInit() {
     this.uid = this.auth.currentUserId
-    this.shelves = this.db.list(`/users/${this.uid}/shelves`)
+    this.shelves = this.db.list(`/users/${this.uid}/shelves/`)
   }
 
 }

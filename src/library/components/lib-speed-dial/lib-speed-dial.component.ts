@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MdDialog } from '@angular/material';
 
+import { ComingSoonComponent } from '@tfn/core/components';
+
 import {
   AddNotebookPageComponent,
   AddShelfPageComponent
@@ -23,10 +25,10 @@ export class LibSpeedDialComponent {
   }
 
   addShelf() {
-    this.dialog.open(AddShelfPageComponent)
+    this.dialog.open(ComingSoonComponent)
   }
 
   addTeam() {
-    console.log('Feature coming soon!')
+    this.dialog.open(ComingSoonComponent)
   }
 }

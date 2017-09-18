@@ -27,6 +27,6 @@
 
   <md-dialog-actions fxLayoutAlign="space-around center">
     <button md-button md-dialog-close type="button">Cancel</button>
-    <button md-button md-dialog-close type="submit" [disabled]="form.invalid">Ok</button>
+    <button md-button md-dialog-close type="submit" [disabled]="form.invalid" (click)="addNotebook()">Ok</button>
   </md-dialog-actions>
 </form>
