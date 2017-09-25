@@ -1,18 +1,9 @@
-md-icon {
-    margin-right: 16px;
-}
+@import '~@angular/material/theming';
 
-button {
-    width: 100%;
-    margin: .5rem auto;
-    text-transform: uppercase
-}
+@import '~@tfn/core/theming/tfn.theme.scss';
 
-md-nav-list {
+.Header {
     margin: 0;
-    padding: 0
-}
-
-md-list {
-    width: 250px
+    height: 3rem;
+    background: mat-color($tfn-primary);
 }

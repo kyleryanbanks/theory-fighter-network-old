@@ -1,19 +1,8 @@
-<md-list>
+<h1 fxLayout fxLayoutAlign="center center" class="Header mat-h2">
+    Normals
+</h1>
+<md-nav-list>
     <md-list-item>
-        <button md-raised-button color="primary" routerLink="/library">Return to Library</button>
+        Foo
     </md-list-item>
-    </md-list>
-    <md-expansion-panel *ngFor="let nav of navigation">
-    <md-expansion-panel-header>
-        <md-panel-title>
-        <md-icon mdListIcon>{{ nav.icon }}</md-icon>
-        {{ nav.heading }}
-        </md-panel-title>
-    </md-expansion-panel-header>
-    <md-nav-list>
-        <md-list-item *ngFor="let sub of nav.subheadings">
-        <a mdLine [routerLink]="sub.link">{{sub.title}}</a>
-        </md-list-item>
-    </md-nav-list>
-</md-expansion-panel>
-      
+</md-nav-list>

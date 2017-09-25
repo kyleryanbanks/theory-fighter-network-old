@@ -17,122 +17,122 @@ export class NotebookSidebarComponent implements OnInit {
           title: 'Basics',
           link: 'basics'
         },
-        {
-          title: 'Gameplan',
-          link: 'gameplan'
-        }
+        // {
+        //   title: 'Gameplan',
+        //   link: 'gameplan'
+        // }
       ],
     },
-    {
-      heading: 'Theory',
-      icon: 'lightbulb_outline',
-      subheadings: [
-        {
-          title: 'Notes',
-          link: 'notes'
-        },
-        {
-          title: 'WIP',
-          link: 'wip'
-        },
-        {
-          title: 'Inbox',
-          link: 'inbox'
-        }
-      ]
-    },
+    // {
+    //   heading: 'Theory',
+    //   icon: 'lightbulb_outline',
+    //   subheadings: [
+    //     {
+    //       title: 'Notes',
+    //       link: 'notes'
+    //     },
+    //     {
+    //       title: 'WIP',
+    //       link: 'wip'
+    //     },
+    //     {
+    //       title: 'Inbox',
+    //       link: 'inbox'
+    //     }
+    //   ]
+    // },
     {
       heading: 'Move List',
       icon: 'view_list',
       subheadings: [
-        {
-          title: 'Basic Mobility',
-          link: 'basics'
-        },
+        // {
+        //   title: 'Universal',
+        //   link: 'universal'
+        // },
         {
           title: 'Normals',
           link: 'normals'
         },
-        {
-          title: 'Command Normals',
-          link: 'commands'
-        },
-        {
-          title: 'Special Moves',
-          link: 'specials'
-        },
-        {
-          title: 'Super Moves',
-          link: 'supers'
-        },
-        {
-          title: 'Infinity Stones',
-          link: 'stones'
-        }
+        // {
+        //   title: 'Command Normals',
+        //   link: 'commands'
+        // },
+        // {
+        //   title: 'Special Moves',
+        //   link: 'specials'
+        // },
+        // {
+        //   title: 'Super Moves',
+        //   link: 'supers'
+        // },
+        // {
+        //   title: 'Infinity Stones',
+        //   link: 'stones'
+        // }
       ]
     },
-    {
-      heading: 'Sequences',
-      icon: 'linear_scale',
-      subheadings: [
-        {
-          title: 'Okizeme',
-          link: 'okizeme'
-        },
-        {
-          title: 'Neutral Setups',
-          link: 'neutral'
-        },
-        {
-          title: 'Blockstrings',
-          link: 'blockstrings'
-        },
-        {
-          title: 'Combos',
-          link: 'combos'
-        }
-      ]
-    },
-    {
-      heading: 'Matchups',
-      icon: 'compare_arrows',
-      subheadings: [
-        {
-          title: 'Character',
-          link: 'character'
-        },
-        {
-          title: 'Teams',
-          link: 'teams'
-        }
-      ]
-    },
-    {
-      heading: 'Training Regiment',
-      icon: 'fitness_center',
-      subheadings: [
-        {
-          title: 'Combos',
-          link: 'combos'
-        },
-        {
-          title: 'Punishes',
-          link: 'punishes'
-        },
-        {
-          title: 'Setups',
-          link: 'setups'
-        },
-        {
-          title: 'Advanced Mobility',
-          link: 'mobility'
-        },
-        {
-          title: 'Conversions',
-          link: 'conversions'
-        }
-      ]
-    }
+    // {
+    //   heading: 'Sequences',
+    //   icon: 'linear_scale',
+    //   subheadings: [
+    //     {
+    //       title: 'Okizeme',
+    //       link: 'okizeme'
+    //     },
+    //     {
+    //       title: 'Neutral Setups',
+    //       link: 'neutral'
+    //     },
+    //     {
+    //       title: 'Blockstrings',
+    //       link: 'blockstrings'
+    //     },
+    //     {
+    //       title: 'Combos',
+    //       link: 'combos'
+    //     }
+    //   ]
+    // },
+    // {
+    //   heading: 'Matchups',
+    //   icon: 'compare_arrows',
+    //   subheadings: [
+    //     {
+    //       title: 'Character',
+    //       link: 'character'
+    //     },
+    //     {
+    //       title: 'Teams',
+    //       link: 'teams'
+    //     }
+    //   ]
+    // },
+    // {
+    //   heading: 'Training Regiment',
+    //   icon: 'fitness_center',
+    //   subheadings: [
+    //     {
+    //       title: 'Combos',
+    //       link: 'combos'
+    //     },
+    //     {
+    //       title: 'Punishes',
+    //       link: 'punishes'
+    //     },
+    //     {
+    //       title: 'Setups',
+    //       link: 'setups'
+    //     },
+    //     {
+    //       title: 'Advanced Mobility',
+    //       link: 'mobility'
+    //     },
+    //     {
+    //       title: 'Conversions',
+    //       link: 'conversions'
+    //     }
+    //   ]
+    // }
   ]
   constructor(private router: Router) { }
 

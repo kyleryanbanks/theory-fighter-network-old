@@ -5,7 +5,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {
   MovelistComponent,
   NotebookSidebarComponent,
-  NotebookCardComponent
+  NotebookCardComponent,
+  StickInputComponent,
 } from './components';
 import {
   MdButtonModule,
@@ -13,12 +14,17 @@ import {
   MdListModule,
   MdExpansionModule,
   MdSidenavModule,
-  MdCardModule
+  MdCardModule,
+  MdTooltipModule,
+  MdDialogModule,
+  MdGridListModule,
+  MdSelectModule,
 } from '@angular/material';
 import {
   BasicsPageComponent,
   NormalsPageComponent,
-  NotebookInterfaceComponent
+  NotebookInterfaceComponent,
+  AddNormalPageComponent
 } from './containers';
 import {
   ComingSoonComponent
@@ -31,7 +37,11 @@ const MATERIAL_IMPORTS = [
   MdIconModule,
   MdListModule,
   MdExpansionModule,
-  MdSidenavModule
+  MdSidenavModule,
+  MdTooltipModule,
+  MdDialogModule,
+  MdGridListModule,
+  MdSelectModule,
 ]
 
 
@@ -40,7 +50,8 @@ const MATERIAL_IMPORTS = [
     CommonModule,
     CoreModule,
     MATERIAL_IMPORTS,
-    NotebookRoutingModule
+    NotebookRoutingModule,
+    FlexLayoutModule
   ],
   declarations: [
     MovelistComponent,
@@ -48,8 +59,12 @@ const MATERIAL_IMPORTS = [
     BasicsPageComponent,
     NormalsPageComponent,
     NotebookInterfaceComponent,
-    NotebookCardComponent
+    NotebookCardComponent,
+    AddNormalPageComponent,
+    StickInputComponent
   ],
-  exports: []
+  entryComponents: [
+    AddNormalPageComponent
+  ]
 })
 export class NotebookModule { }

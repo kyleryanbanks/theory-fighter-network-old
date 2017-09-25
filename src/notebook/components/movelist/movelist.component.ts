@@ -13,4 +13,6 @@ export class MovelistComponent implements OnInit {
   ngOnInit() {
   }
 
+  newNormal() {}
+
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MdDialog } from '@angular/material';
+import { AddNormalPageComponent } from '@tfn/notebook/containers';
 
 @Component({
   selector: 'tfn-notebook-interface',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotebookInterfaceComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MdDialog) { }
 
   ngOnInit() {
   }
 
+  addNormal() {
+    this.dialog.open(AddNormalPageComponent)
+  }
 }

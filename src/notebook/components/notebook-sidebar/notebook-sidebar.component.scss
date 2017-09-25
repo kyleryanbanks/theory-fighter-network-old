@@ -1,3 +1,7 @@
+@import '~@angular/material/theming';
+
+@import '~@tfn/core/theming/tfn.theme.scss';
+
 md-icon {
     margin-right: 16px;
 }

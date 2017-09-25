@@ -3,7 +3,7 @@
     <button md-raised-button color="primary" routerLink="/library">Return to Library</button>
   </md-list-item>
 </md-list>
-<md-expansion-panel *ngFor="let nav of navigation">
+<md-expansion-panel class="mat-elevation-z0" *ngFor="let nav of navigation">
   <md-expansion-panel-header>
     <md-panel-title>
       <md-icon mdListIcon>{{ nav.icon }}</md-icon>
@@ -11,8 +11,6 @@
     </md-panel-title>
   </md-expansion-panel-header>
   <md-nav-list>
-    <md-list-item *ngFor="let sub of nav.subheadings">
-      <a mdLine [routerLink]="sub.link">{{sub.title}}</a>
-    </md-list-item>
+    <a md-list-item *ngFor="let sub of nav.subheadings" [routerLink]="sub.link">{{sub.title}}</a>
   </md-nav-list>
 </md-expansion-panel>
