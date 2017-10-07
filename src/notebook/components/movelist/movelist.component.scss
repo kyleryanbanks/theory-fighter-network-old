@@ -1,9 +1,0 @@
-@import '~@angular/material/theming';
-
-@import '~@tfn/core/theming/tfn.theme.scss';
-
-.Header {
-    margin: 0;
-    height: 3rem;
-    background: mat-color($tfn-primary);
-}

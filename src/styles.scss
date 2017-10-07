@@ -1,0 +1,57 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$tfn-primary: mat-palette($mat-deep-purple);
+$tfn-accent: mat-palette($mat-cyan);
+$tfn-warn: mat-palette($mat-red);
+
+$tfn-theme: mat-dark-theme(
+    $tfn-primary,
+    $tfn-accent,
+    $tfn-warn
+);
+
+@include angular-material-theme($tfn-theme);
+
+body {
+  color: white;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+overflow: scroll;
+overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.primary {
+  color: mat-color($tfn-primary)
+}
+
+.bg-primary {
+  background-color: mat-color($tfn-primary)
+}
+
+.accent {
+  color: mat-color($tfn-accent)
+}
+
+.bg-accent {
+  background-color: mat-color($tfn-accent)
+}
+
+.warn {
+  color: mat-color($tfn-warn)
+}
+
+.bg-warn {
+  background-color: mat-color($tfn-warn)
+}
+

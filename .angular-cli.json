@@ -5,10 +5,11 @@
   },
   "apps": [
     {
-      "root": "./src",
+      "root": "src",
       "outDir": "dist",
       "assets": [
-        "core/assets"
+        "assets",
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -18,13 +19,38 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "tfn",
       "styles": [
-        "core/theming/tfn.theme.scss"
+        "styles.scss"
       ],
       "scripts": [],
-      "environmentSource": "core/environments/environment.ts",
+      "environmentSource": "environments/environment.ts",
       "environments": {
-        "dev": "./environments/environment.ts",
-        "prod": "./environments/environment.prod.ts"
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "component-lab",
+      "root": "src",
+      "outDir": "dist-lab",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "lab.html",
+      "main": "lab.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.lab.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "tfn",
+      "styles": [
+        "styles.scss"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
       }
     }
   ],
@@ -35,13 +61,16 @@
   },
   "lint": [
     {
-      "project": "src/tsconfig.app.json"
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
     },
     {
-      "project": "src/tsconfig.spec.json"
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
     },
     {
-      "project": "e2e/tsconfig.e2e.json"
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
     }
   ],
   "test": {
@@ -50,7 +79,7 @@
     }
   },
   "defaults": {
-    "styleExt": "scss",
+    "styleExt": "css",
     "component": {}
   }
 }

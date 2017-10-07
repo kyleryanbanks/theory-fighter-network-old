@@ -1,0 +1,8 @@
+.input {
+    border-radius: 10%;
+}
+
+md-grid-list {
+    height: 150px;
+    width: 150px;
+}

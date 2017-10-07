@@ -1,0 +1,9 @@
+md-form-field {
+    width: 100% !important;
+}
+
+button {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}

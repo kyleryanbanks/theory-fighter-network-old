@@ -1,14 +1,14 @@
-import { TheoryFighterNetworkPage } from './app.po';
+import { AppPage } from './app.po';
 
 describe('theory-fighter-network App', () => {
-  let page: TheoryFighterNetworkPage;
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new TheoryFighterNetworkPage();
+    page = new AppPage();
   });
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getParagraphText()).toEqual('Welcome to tfn!');
   });
 });
