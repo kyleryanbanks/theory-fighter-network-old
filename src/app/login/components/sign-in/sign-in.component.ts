@@ -1,6 +1,5 @@
 import {
   Component,
-  Inject,
   Input,
   Output,
   EventEmitter,
@@ -23,7 +22,7 @@ import { ForgotPasswordComponent } from 'app/login/containers'
 })
 export class SignInComponent {
 
-  @Output() signin = new EventEmitter()
+  @Output() signIn = new EventEmitter()
   @Output() forgotPassword = new EventEmitter()
   @Input() error: string
   signInForm: FormGroup
@@ -36,28 +35,13 @@ export class SignInComponent {
     })
   }
 
-  onForgotPassword(): void {
+  onForgotPassword() {
     this.forgotPassword.emit(this.signInForm.value.email)
-    // const dialogRef = this.dialog.open(ForgotPasswordComponent, {
-    //   data: { email: this.signInForm.value.email }
-    // })
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   if (result) {
-    //     this.forgotPassword.emit(result)
-    //     this.auth.forgotPassword(result)
-    //       .then(() => this.errorMsg = 'An email was sent to the provided account if it exists.')
-    //   }
-    // })
   }
 
-  onSignIn(): void {
+  onSignIn() {
     if (this.signInForm.valid) {
-      this.signin.emit(this.signInForm.value)
-    // const { email, password } = this.signInForm.value
-    // this.auth.emailSignIn(email, password)
-    //   .then(auth => this.router.navigate(['library']))
-    //   .catch(({message}) => this.errorMsg = message)
+      this.signIn.emit(this.signInForm.value)
     } else {
       this.error = 'Please provide missing information and try again.'
     }

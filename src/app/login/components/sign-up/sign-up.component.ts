@@ -17,7 +17,7 @@ import { PasswordValidation } from 'app/shared/utils'
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-  @Output() signup = new EventEmitter
+  @Output() signUp = new EventEmitter
   @Input() error: string
   signUpForm: FormGroup
 
@@ -31,14 +31,9 @@ export class SignUpComponent {
     })
   }
 
-  onSignUp(): void {
-
+  onSignUp() {
     if (this.signUpForm.valid) {
-      this.signup.emit(this.signUpForm.value)
-      // const { email, password, confirmPassword } = this.signUpForm.value
-      // this.auth.emailSignUp(email, password)
-      //   .then(auth => this.router.navigate(['library']))
-      //   .catch(({message}) => this.errorMsg = message)
+      this.signUp.emit(this.signUpForm.value)
     } else {
       this.error = 'Please provide missing information and try again.'
     }

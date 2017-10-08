@@ -1,6 +1,11 @@
 <div fxLayout="column" fxLayoutAlign="start center">
     <h1 class="mat-display-3">Theory Fighter Network</h1>
-    <tfn-sign-in></tfn-sign-in>
+    <tfn-sign-in
+      (signIn)="onSignIn($event)"
+      (forgotPassword)="onForgotPassword($event)"
+      [error]="signInError"></tfn-sign-in>
     <h2 class="mat-headline">— or —</h2>
-    <tfn-sign-up></tfn-sign-up>
+    <tfn-sign-up
+      (signUp)="onSignUp($event)"
+      [error]="signUpError"></tfn-sign-up>
 </div>
