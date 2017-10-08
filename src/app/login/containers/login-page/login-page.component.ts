@@ -39,7 +39,6 @@ export class LoginPageComponent implements OnInit {
   }
 
   onForgotPassword(email: string) {
-    console.log(email)
     const dialogRef = this.dialog.open(ForgotPasswordComponent, {
       data: { email: email }
     })
@@ -47,7 +46,7 @@ export class LoginPageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.auth.forgotPassword(result).then(
-          () => this.signUpError = 'An email was sent to the provided account if it exists.')
+          () => this.signInError = 'An email was sent to the provided account if it exists.')
       }
     })
   }

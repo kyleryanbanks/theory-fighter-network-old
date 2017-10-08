@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 
-import { AngularFireAuth } from 'angularfire2/auth'
-import { AngularFirestoreModule } from 'angularfire2/firestore'
 import { AngularFireModule } from 'angularfire2'
+import { AngularFireAuthModule } from 'angularfire2/auth'
+import { AngularFirestoreModule } from 'angularfire2/firestore'
 import { environment } from '../environments/environment'
 
 /* Feature Modules */
@@ -27,8 +27,9 @@ import { WildcardRoutingModule } from './wildcard-routing.module'
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, 'theoryfighternetwork'),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
+    AngularFireAuthModule,
     AppRoutingModule,
     LibraryModule,
     LoginModule,
@@ -37,7 +38,6 @@ import { WildcardRoutingModule } from './wildcard-routing.module'
   ],
   providers: [
     AuthService,
-    AngularFireAuth,
     AuthGuard
   ],
   bootstrap: [AppComponent]
