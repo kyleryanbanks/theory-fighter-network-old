@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { MdDialog } from '@angular/material'
-import { NotebookInfoPageComponent } from 'app/library/containers'
 import { ComingSoonComponent } from 'app/shared/components'
 import { Router } from '@angular/router'
 import {
