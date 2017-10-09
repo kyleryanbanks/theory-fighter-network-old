@@ -3,15 +3,15 @@
   <form novalidate [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
     <md-form-field>
       <md-placeholder>Email</md-placeholder>
-      <input mdInput formControlName="email" type="email">
+      <input mdInput formControlName="email" type="email" id="email">
     </md-form-field>
     <md-form-field>
         <md-placeholder>Password</md-placeholder>
-      <input mdInput formControlName="password" type="password">
+      <input mdInput formControlName="password" type="password" id="password">
     </md-form-field>
     <md-form-field>
         <md-placeholder>Confirm Password</md-placeholder>
-      <input mdInput formControlName="confirmPassword" type="password">
+      <input mdInput formControlName="confirmPassword" type="password" id="confirmPassword">
     </md-form-field>
     <button md-raised-button type="submit" color="primary">Sign Up</button>
   </form>
