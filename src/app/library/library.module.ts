@@ -17,8 +17,6 @@ import {
 import {
   LibraryPageComponent,
   AddNotebookPageComponent,
-  AddShelfPageComponent,
-  NotebookInfoPageComponent
  } from './containers'
 import {
   ShelfComponent,
@@ -54,16 +52,12 @@ const MATERIAL_IMPORTS = [
     ShelfComponent,
     LibSpeedDialComponent,
     AddNotebookPageComponent,
-    AddShelfPageComponent,
-    NotebookInfoPageComponent
   ],
   exports: [
     LibraryPageComponent
   ],
   entryComponents: [
-    AddNotebookPageComponent,
-    AddShelfPageComponent,
-    NotebookInfoPageComponent
+    AddNotebookPageComponent
   ]
 })
 export class LibraryModule { }
