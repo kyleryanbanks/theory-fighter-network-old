@@ -33,20 +33,38 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { FlexLayoutModule } from '@angular/flex-layout'
 
 import {
+  SmdFabSpeedDialTrigger,
+  SmdFabSpeedDialActions,
+  SmdFabSpeedDialComponent
+} from 'app/shared/components'
+
+import {
   SignInComponent,
   SignUpComponent
 } from 'app/login/components'
+
+import {
+  LibSpeedDialComponent,
+  CoverCardComponent
+} from 'app/library/components'
 
 declare var require: any
 
 @NgModule({
   declarations: [
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    LibSpeedDialComponent,
+    CoverCardComponent,
+    SmdFabSpeedDialTrigger,
+    SmdFabSpeedDialActions,
+    SmdFabSpeedDialComponent
   ],
   exports: [
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    LibSpeedDialComponent,
+    CoverCardComponent
   ],
   imports: [
     MATERIAL_IMPORTS,

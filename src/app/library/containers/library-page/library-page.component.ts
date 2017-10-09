@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core'
 import {
-  AngularFireDatabase
-} from 'angularfire2/database'
+  Component,
+  OnInit
+} from '@angular/core'
+import { MdDialog } from '@angular/material'
+
+import { AddNotebookPageComponent } from 'app/library/containers/add-notebook-page'
+import { ComingSoonComponent } from 'app/shared/components'
+import { AngularFireDatabase } from 'angularfire2/database'
 
 import { AuthService } from 'app/shared/services'
-import { Shelf } from 'app/shared/models/'
 
 
 @Component({
@@ -19,6 +23,7 @@ export class LibraryPageComponent implements OnInit {
 
   constructor(
     private db: AngularFireDatabase,
+    private dialog: MdDialog,
     public auth: AuthService
   ) {}
 
@@ -27,4 +32,15 @@ export class LibraryPageComponent implements OnInit {
     this.shelves = this.db.list(`/users/${this.uid}/shelves/`)
   }
 
+  onAddNotebook() {
+    this.dialog.open(AddNotebookPageComponent)
+  }
+
+  onAddShelf() {
+    this.dialog.open(ComingSoonComponent)
+  }
+
+  onAddTeam() {
+    this.dialog.open(ComingSoonComponent)
+  }
 }

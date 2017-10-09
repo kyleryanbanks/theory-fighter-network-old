@@ -1,34 +1,45 @@
-import { Component } from '@angular/core'
-import { MdDialog } from '@angular/material'
-
-import { ComingSoonComponent } from 'app/shared/components'
-
 import {
-  AddNotebookPageComponent,
-  AddShelfPageComponent
-} from 'app/library/containers'
+  Component,
+  EventEmitter,
+  Output
+} from '@angular/core'
 
 
 @Component({
   selector: 'tfn-lib-speed-dial',
-  templateUrl: './lib-speed-dial.component.html',
-  styleUrls: ['./lib-speed-dial.component.scss']
+  template: `
+    <smd-fab-speed-dial #myFab (mouseenter)="myFab.open = true" (mouseleave)="myFab.open = false">
+      <smd-fab-trigger spin="true">
+          <button md-fab (click)="onAddNotebook()"
+          mdTooltip="New Notebook" mdTooltipPosition="before"><md-icon>note_add</md-icon></button>
+      </smd-fab-trigger>
+
+      <smd-fab-actions>
+          <button md-mini-fab (click)="onAddShelf()"
+          mdTooltip="New Shelf" mdTooltipPosition="before"><md-icon>library_add</md-icon></button>
+          <button md-mini-fab (click)="onAddTeam()"
+          mdTooltip="New Team Notebook" mdTooltipPosition="before"><md-icon>group_add</md-icon></button>
+      </smd-fab-actions>
+    </smd-fab-speed-dial>
+  `
 })
 export class LibSpeedDialComponent {
 
-  constructor(
-    private dialog: MdDialog,
-  ) {}
+  @Output() addNotebook = new EventEmitter
+  @Output() addShelf = new EventEmitter
+  @Output() addTeam = new EventEmitter
 
-  addNotebook() {
-    this.dialog.open(AddNotebookPageComponent)
+  constructor() { }
+
+  onAddNotebook() {
+    this.addNotebook.emit()
   }
 
-  addShelf() {
-    this.dialog.open(ComingSoonComponent)
+  onAddShelf() {
+    this.addShelf.emit()
   }
 
-  addTeam() {
-    this.dialog.open(ComingSoonComponent)
+  onAddTeam() {
+    this.addTeam.emit()
   }
 }

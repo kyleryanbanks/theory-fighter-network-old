@@ -2,7 +2,10 @@
 
     <div class="content" fxLayout="column">
         <!-- <tfn-shelf *ngFor="let shelf of shelves" [shelf]="shelf"></tfn-shelf> -->
-        <tfn-lib-speed-dial></tfn-lib-speed-dial>
+        <tfn-lib-speed-dial
+          (addNotebook)="onAddNotebook($event)"
+          (addShelf)="onAddShelf($event)"
+          (addTeam)="onAddTeam($event)"></tfn-lib-speed-dial>
     </div>
 
 </tfn-nav-bar>
