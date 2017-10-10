@@ -9,11 +9,6 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms'
-import { MdDialog } from '@angular/material'
-import { Router } from '@angular/router'
-
-import { AuthService } from 'app/shared/services'
-import { ForgotPasswordComponent } from 'app/login/containers'
 
 @Component({
   selector: 'tfn-sign-in',
@@ -27,8 +22,7 @@ export class SignInComponent {
   @Input() error: string
   signInForm: FormGroup
 
-  constructor(private fb: FormBuilder,
-              private dialog: MdDialog) {
+  constructor(private fb: FormBuilder) {
     this.signInForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
