@@ -1,3 +1,3 @@
-export * from './cover-card';
-export * from './shelf';
-export * from './lib-speed-dial';
+export * from './cover-card/cover-card.component'
+export * from './shelf/shelf.component'
+export * from './lib-speed-dial/lib-speed-dial.component'

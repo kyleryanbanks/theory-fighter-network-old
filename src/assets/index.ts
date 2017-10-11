@@ -1,2 +1,1 @@
-export * from './placeholders';
-export * from './autocompletes';
+export * from './autocompletes'

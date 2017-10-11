@@ -4,7 +4,7 @@ import {
 } from '@angular/core'
 import { MdDialog } from '@angular/material'
 
-import { AddNotebookPageComponent } from 'app/library/containers/add-notebook-page'
+import { AddNotebookPageComponent } from '../add-notebook-page/add-notebook-page.component'
 import { ComingSoonComponent } from 'app/shared/components'
 import { AngularFireDatabase } from 'angularfire2/database'
 

@@ -7,7 +7,7 @@ import { Router } from '@angular/router'
 import { MdDialog } from '@angular/material'
 
 import { AuthService } from 'app/shared/services'
-import { ForgotPasswordComponent } from 'app/login/containers/forgot-password'
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component'
 
 @Component({
   selector: 'tfn-login-page',

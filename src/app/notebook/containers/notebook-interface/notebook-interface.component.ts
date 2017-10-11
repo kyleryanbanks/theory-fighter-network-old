@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MdDialog } from '@angular/material';
-import { AddNormalPageComponent } from '../add-normal-page';
+import { Component, OnInit } from '@angular/core'
+import { MdDialog } from '@angular/material'
+import { AddNormalPageComponent } from '../add-normal-page/add-normal-page.component'
 
 @Component({
   selector: 'tfn-notebook-interface',
