@@ -11,6 +11,11 @@ const commonContext = {
     console.log('Event', event)
     console.groupEnd()
   },
+  onUnfavorite(event) {
+    console.group('Unfavorite')
+    console.log('Event', event)
+    console.groupEnd()
+  },
   onInfo(event) {
     console.group('Info')
     console.log('Event', event)
@@ -21,21 +26,37 @@ const commonContext = {
     console.log('Event', event)
     console.groupEnd()
   },
-  notebook: {
-    title: 'Some Title'
-  }
+  notebooks: [
+    {
+      title: 'Title 1'
+    },
+    {
+      title: 'Title 2'
+    },
+    {
+      title: 'Title 3'
+    },
+    {
+      title: 'Title 4'
+    },
+    {
+      title: 'Title 5'
+    }
+  ],
+  title: 'Shelf Title'
 }
 
-
-export default experimentOn('Cover Card')
+export default experimentOn('Shelf')
   .case('Basic', {
     context: commonContext,
     template: `
-      <tfn-cover-card
+      <tfn-shelf
         (click)="onClick($event)"
         (favorite)="onFavorite($event)"
+        (unfavorite)="onUnfavorite($event)"
         (info)="onInfo($event)"
         (share)="onShare($event)"
-        [notebook]="notebook"></tfn-cover-card>
+        [notebooks]="notebooks"
+        [title]="title"></tfn-shelf>
     `
   })

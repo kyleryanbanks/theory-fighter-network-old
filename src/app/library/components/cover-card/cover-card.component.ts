@@ -13,6 +13,7 @@ import {
 export class CoverCardComponent {
   @Output() click = new EventEmitter
   @Output() favorite = new EventEmitter
+  @Output() unfavorite = new EventEmitter
   @Output() info = new EventEmitter
   @Output() share = new EventEmitter
   @Input() notebook: any
@@ -21,19 +22,23 @@ export class CoverCardComponent {
   constructor() { }
 
   onClick() {
-    this.click.emit()
+    this.click.emit(this.notebook.id)
   }
 
   onFavorite() {
+    if (this.favorited) {
+      this.unfavorite.emit(this.notebook.id)
+    } else {
+      this.favorite.emit(this.notebook.id)
+    }
     this.favorited = !this.favorited
-    this.favorite.emit(this.favorited)
   }
 
   onInfo() {
-    this.info.emit()
+    this.info.emit(this.notebook.id)
   }
 
   onShare() {
-    this.info.emit()
+    this.info.emit(this.notebook.id)
   }
 }

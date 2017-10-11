@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core'
 import { createLab } from 'component-lab'
 
+import { CommonModule } from '@angular/common'
+
 import {
   MdButtonModule,
   MdIconModule,
@@ -45,7 +47,8 @@ import {
 
 import {
   LibSpeedDialComponent,
-  CoverCardComponent
+  CoverCardComponent,
+  ShelfComponent
 } from 'app/library/components'
 
 declare var require: any
@@ -56,6 +59,7 @@ declare var require: any
     SignUpComponent,
     LibSpeedDialComponent,
     CoverCardComponent,
+    ShelfComponent,
     SmdFabSpeedDialTrigger,
     SmdFabSpeedDialActions,
     SmdFabSpeedDialComponent
@@ -64,9 +68,11 @@ declare var require: any
     SignInComponent,
     SignUpComponent,
     LibSpeedDialComponent,
-    CoverCardComponent
+    CoverCardComponent,
+    ShelfComponent
   ],
   imports: [
+    CommonModule,
     MATERIAL_IMPORTS,
     FlexLayoutModule,
     ReactiveFormsModule

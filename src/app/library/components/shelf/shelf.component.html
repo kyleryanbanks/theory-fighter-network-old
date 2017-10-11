@@ -1,8 +1,8 @@
 <section>
-  <span class="mat-title">{{shelf.title}}</span>
+  <span class="mat-title">{{title}}</span>
   <div fxLayout="row wrap" fxLayoutAlign="space-around center">
     <tfn-cover-card
-      *ngFor="let notebook of notebooks$" 
+      *ngFor="let notebook of notebooks"
       [notebook]="notebook"
       fxFlex="0 0 150px"></tfn-cover-card>
   </div>
