@@ -1,43 +1,39 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { MdDialog } from '@angular/material'
-import { ComingSoonComponent } from 'app/shared/components'
-import { Router } from '@angular/router'
 import {
-  AngularFireDatabase
-} from 'angularfire2/database'
+  Component,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core'
 
 @Component({
   selector: 'tfn-cover-card',
   templateUrl: './cover-card.component.html',
   styleUrls: ['./cover-card.component.css']
 })
-export class CoverCardComponent implements OnInit {
+export class CoverCardComponent {
+  @Output() click = new EventEmitter
+  @Output() favorite = new EventEmitter
+  @Output() info = new EventEmitter
+  @Output() share = new EventEmitter
   @Input() notebook: any
-  favorite: Boolean
+  favorited = true
 
-  constructor(
-    private db: AngularFireDatabase,
-    private dialog: MdDialog,
-    private router: Router
-  ) { }
-
-  ngOnInit() {
-    }
+  constructor() { }
 
   onClick() {
-    this.router.navigate([`notebook/${this.notebook.$key}`])
+    this.click.emit()
   }
 
   onFavorite() {
-    console.log('favorite is now ' + this.favorite)
-    this.favorite = !this.favorite
+    this.favorited = !this.favorited
+    this.favorite.emit(this.favorited)
   }
 
   onInfo() {
-    this.dialog.open(ComingSoonComponent)
+    this.info.emit()
   }
 
   onShare() {
-    this.dialog.open(ComingSoonComponent)
+    this.info.emit()
   }
 }
