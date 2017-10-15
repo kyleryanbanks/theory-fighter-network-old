@@ -11,7 +11,7 @@ import {
   styleUrls: ['./cover-card.component.css']
 })
 export class CoverCardComponent {
-  @Output() click = new EventEmitter
+  @Output() cover = new EventEmitter
   @Output() favorite = new EventEmitter
   @Output() unfavorite = new EventEmitter
   @Output() info = new EventEmitter
@@ -21,8 +21,8 @@ export class CoverCardComponent {
 
   constructor() { }
 
-  onClick() {
-    this.click.emit(this.notebook.id)
+  onCover() {
+    this.cover.emit(this.notebook.id)
   }
 
   onFavorite() {
@@ -39,6 +39,6 @@ export class CoverCardComponent {
   }
 
   onShare() {
-    this.info.emit(this.notebook.id)
+    this.share.emit(this.notebook.id)
   }
 }

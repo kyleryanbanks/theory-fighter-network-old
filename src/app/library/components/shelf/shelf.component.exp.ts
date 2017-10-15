@@ -1,8 +1,8 @@
 import { experimentOn } from 'component-lab'
 
 const commonContext = {
-  onClick(event) {
-    console.group('Click')
+  onCover(event) {
+    console.group('Cover')
     console.log('Event', event)
     console.groupEnd()
   },
@@ -28,19 +28,24 @@ const commonContext = {
   },
   notebooks: [
     {
-      title: 'Title 1'
+      title: 'Title 1',
+      id: 'Title_1_key'
     },
     {
-      title: 'Title 2'
+      title: 'Title 2',
+      id: 'Title_2_key'
     },
     {
-      title: 'Title 3'
+      title: 'Title 3',
+      id: 'Title_3_key'
     },
     {
-      title: 'Title 4'
+      title: 'Title 4',
+      id: 'Title_4_key'
     },
     {
-      title: 'Title 5'
+      title: 'Title 5',
+      id: 'Title_5_key'
     }
   ],
   title: 'Shelf Title'
@@ -51,7 +56,7 @@ export default experimentOn('Shelf')
     context: commonContext,
     template: `
       <tfn-shelf
-        (click)="onClick($event)"
+        (cover)="onCover($event)"
         (favorite)="onFavorite($event)"
         (unfavorite)="onUnfavorite($event)"
         (info)="onInfo($event)"

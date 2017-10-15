@@ -1,13 +1,18 @@
 import { experimentOn } from 'component-lab'
 
 const commonContext = {
-  onClick(event) {
-    console.group('Click')
+  onCover(event) {
+    console.group('Cover')
     console.log('Event', event)
     console.groupEnd()
   },
   onFavorite(event) {
     console.group('Favorite')
+    console.log('Event', event)
+    console.groupEnd()
+  },
+  onUnfavorite(event) {
+    console.group('Unfavorite')
     console.log('Event', event)
     console.groupEnd()
   },
@@ -22,7 +27,8 @@ const commonContext = {
     console.groupEnd()
   },
   notebook: {
-    title: 'Some Title'
+    title: 'Some Title',
+    id: 'Random_Key_123'
   }
 }
 
@@ -32,8 +38,9 @@ export default experimentOn('Cover Card')
     context: commonContext,
     template: `
       <tfn-cover-card
-        (click)="onClick($event)"
+        (cover)="onCover($event)"
         (favorite)="onFavorite($event)"
+        (unfavorite)="onUnfavorite($event)"
         (info)="onInfo($event)"
         (share)="onShare($event)"
         [notebook]="notebook"></tfn-cover-card>

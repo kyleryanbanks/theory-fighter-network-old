@@ -18,12 +18,12 @@ export class ShelfComponent {
   @Output() unfavorite = new EventEmitter
   @Output() info = new EventEmitter
   @Output() share = new EventEmitter
-  @Output() click = new EventEmitter
+  @Output() cover = new EventEmitter
 
   constructor() { }
 
-  onClick(event) {
-    this.click.emit(event)
+  onCover(event) {
+    this.cover.emit(event)
   }
 
   onFavorite(event) {
