@@ -1,12 +1,12 @@
 <md-card>
-  <div fxLayout="column" fxLayoutAlign="start center" (click)="onClick()">
-    <img md-card-image [src]='notebook.info.cover' alt="Notebook Cover Art">
+  <div fxLayout="column" fxLayoutAlign="start center" (click)="onCover()">
+    <img md-card-image src='assets/images/mvci.png' alt="Notebook Cover Art">
     <div class="banner bg-primary">
-      <div class="title">{{ this.notebook.info.title }}</div>
+      <div class="title">{{ notebook.title }}</div>
     </div>
   </div>
   <md-card-actions fxLayout="row" fxLayoutAlign="space-around center">
-    <button md-icon-button [color]="favorite? 'warn': null" (click)="onFavorite()">
+    <button md-icon-button [color]="favorited? 'warn': null" (click)="onFavorite()">
       <md-icon>favorite</md-icon>
     </button>
     <button md-icon-button (click)="onInfo()">

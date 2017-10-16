@@ -26,8 +26,9 @@ export class SignUpComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required]
-    }, {
-      validators: PasswordValidation.MatchPassword
+    },
+    {
+      validator: PasswordValidation.passwordMatchValidator
     })
   }
 

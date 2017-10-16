@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common'
 import { ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from 'app/shared'
 import { FlexLayoutModule } from '@angular/flex-layout'
-import { AngularFireDatabaseModule } from 'angularfire2/database'
 import {
   MdToolbarModule,
   MdButtonModule,
@@ -17,8 +16,6 @@ import {
 import {
   LibraryPageComponent,
   AddNotebookPageComponent,
-  AddShelfPageComponent,
-  NotebookInfoPageComponent
  } from './containers'
 import {
   ShelfComponent,
@@ -43,7 +40,6 @@ const MATERIAL_IMPORTS = [
     CommonModule,
     SharedModule,
     FlexLayoutModule,
-    AngularFireDatabaseModule,
     ReactiveFormsModule,
     LibraryRoutingModule,
     MATERIAL_IMPORTS
@@ -54,16 +50,12 @@ const MATERIAL_IMPORTS = [
     ShelfComponent,
     LibSpeedDialComponent,
     AddNotebookPageComponent,
-    AddShelfPageComponent,
-    NotebookInfoPageComponent
   ],
   exports: [
     LibraryPageComponent
   ],
   entryComponents: [
-    AddNotebookPageComponent,
-    AddShelfPageComponent,
-    NotebookInfoPageComponent
+    AddNotebookPageComponent
   ]
 })
 export class LibraryModule { }

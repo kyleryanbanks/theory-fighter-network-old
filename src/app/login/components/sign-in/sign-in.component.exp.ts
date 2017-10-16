@@ -1,13 +1,33 @@
 import { experimentOn } from 'component-lab'
 
+const commonContext = {
+  onSignIn(event) {
+    console.group('Sign In')
+    console.log('Event', event)
+    console.groupEnd()
+  },
+  onForgotPassword(event) {
+    console.group('Forgot Password')
+    console.log('Event', event)
+    console.groupEnd()
+  }
+}
+
 export default experimentOn('Sign In Form')
-  .case('Some Error', {
+  .case('Basic', {
+    context: commonContext,
     template: `
-      <tfn-sign-in error="Some Error"></tfn-sign-in>
+      <tfn-sign-in
+      (signIn)="onSignIn($event)"
+      (forgotPassword)="onForgotPassword($event)"></tfn-sign-in>
     `
   })
-  .case('No Error', {
+  .case('Some Error', {
+    context: commonContext,
     template: `
-      <tfn-sign-in></tfn-sign-in>
+      <tfn-sign-in
+        (signIn)="onSignIn($event)"
+        (forgotPassword)="onForgotPassword($event)"
+        error="This error was passed in."></tfn-sign-in>
     `
   })

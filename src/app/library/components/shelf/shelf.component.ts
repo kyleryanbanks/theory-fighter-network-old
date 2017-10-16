@@ -1,30 +1,44 @@
-import { Component, Input, OnInit } from '@angular/core';
-
 import {
-  AngularFireDatabase,
-  AngularFireList
-} from 'angularfire2/database';
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit
+} from '@angular/core'
 
 @Component({
   selector: 'tfn-shelf',
   templateUrl: './shelf.component.html',
   styleUrls: ['./shelf.component.css']
 })
-export class ShelfComponent implements OnInit {
-  @Input() shelf: any
-  shelf$: AngularFireList<any>
-  notebooks$: AngularFireList<any>
+export class ShelfComponent {
+  @Input() title: string
+  @Input() notebooks: any[]
+  @Output() favorite = new EventEmitter
+  @Output() unfavorite = new EventEmitter
+  @Output() info = new EventEmitter
+  @Output() share = new EventEmitter
+  @Output() cover = new EventEmitter
 
-  constructor(
-    private db: AngularFireDatabase
-  ) { }
+  constructor() { }
 
-  ngOnInit() {
-    if (this.shelf && this.shelf.query) {
-      this.notebooks$ = this.db.list(`/mvci/notebooks/`, this.shelf.query)
-    } else {
-      this.notebooks$ = this.db.list('/mvci/notebooks')
-    }
+  onCover(event) {
+    this.cover.emit(event)
   }
 
+  onFavorite(event) {
+      this.favorite.emit(event)
+  }
+
+  onUnfavorite(event) {
+    this.unfavorite.emit(event)
+  }
+
+  onInfo(event) {
+    this.info.emit(event)
+  }
+
+  onShare(event) {
+    this.share.emit(event)
+  }
 }

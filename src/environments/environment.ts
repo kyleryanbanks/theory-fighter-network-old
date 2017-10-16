@@ -6,13 +6,12 @@
 export const environment = {
   production: false,
 
-  /* Firebase Config */
   firebaseConfig: {
-    apiKey: 'AIzaSyBE4l_CwpQy1w1m-9i9bMd8_UhH5nYK9RE',
-    authDomain: 'theoryfighternetwork.firebaseapp.com',
-    databaseURL: 'https://theoryfighternetwork.firebaseio.com',
-    projectId: 'theoryfighternetwork',
-    storageBucket: 'theoryfighternetwork.appspot.com',
-    messagingSenderId: '596030064632'
+    apiKey: 'AIzaSyBOvDsfawM4naBU7-ZepVbY_jOf42CA9sY',
+    authDomain: 'theoryfighternetwork-test.firebaseapp.com',
+    databaseURL: 'https://theoryfighternetwork-test.firebaseio.com',
+    projectId: 'theoryfighternetwork-test',
+    storageBucket: 'theoryfighternetwork-test.appspot.com',
+    messagingSenderId: '572871523153'
   }
 }
