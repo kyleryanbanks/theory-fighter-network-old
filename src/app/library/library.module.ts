@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common'
 import { ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from 'app/shared'
 import { FlexLayoutModule } from '@angular/flex-layout'
-import { AngularFireDatabaseModule } from 'angularfire2/database'
 import {
   MdToolbarModule,
   MdButtonModule,
@@ -41,7 +40,6 @@ const MATERIAL_IMPORTS = [
     CommonModule,
     SharedModule,
     FlexLayoutModule,
-    AngularFireDatabaseModule,
     ReactiveFormsModule,
     LibraryRoutingModule,
     MATERIAL_IMPORTS

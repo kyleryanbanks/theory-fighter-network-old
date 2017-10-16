@@ -17,7 +17,7 @@ export class CoverCardComponent {
   @Output() info = new EventEmitter
   @Output() share = new EventEmitter
   @Input() notebook: any
-  favorited = true
+  favorited = false
 
   constructor() { }
 

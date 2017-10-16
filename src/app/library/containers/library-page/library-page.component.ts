@@ -2,13 +2,16 @@ import {
   Component,
   OnInit
 } from '@angular/core'
+import { Router } from '@angular/router'
 import { MdDialog } from '@angular/material'
 
 import { AddNotebookPageComponent } from '../add-notebook-page/add-notebook-page.component'
 import { ComingSoonComponent } from 'app/shared/components'
-import { AngularFireDatabase } from 'angularfire2/database'
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore'
+import { Observable } from 'rxjs/observable'
 
 import { AuthService } from 'app/shared/services'
+import { Notebook } from 'app/shared/models'
 
 
 @Component({
@@ -18,18 +21,23 @@ import { AuthService } from 'app/shared/services'
 })
 export class LibraryPageComponent implements OnInit {
   uid: String
-  shelves: any
-
+  recent = []
+  favorites = []
+  notebooksCollection: AngularFirestoreCollection<Notebook>
+  notebooks: Observable<Notebook[]>
 
   constructor(
-    private db: AngularFireDatabase,
+    private afs: AngularFirestore,
     private dialog: MdDialog,
-    public auth: AuthService
-  ) {}
+    private auth: AuthService,
+    private router: Router
+  ) {
+  }
 
   ngOnInit() {
+    this.notebooksCollection = this.afs.collection('notebooks')
+    this.notebooks = this.notebooksCollection.valueChanges()
     this.uid = this.auth.currentUserId
-    this.shelves = this.db.list(`/users/${this.uid}/shelves/`)
   }
 
   onAddNotebook() {
@@ -41,6 +49,22 @@ export class LibraryPageComponent implements OnInit {
   }
 
   onAddTeam() {
+    this.dialog.open(ComingSoonComponent)
+  }
+
+  onCover(event) {
+    this.router.navigate(['notebook', event])
+  }
+
+  onFavorite(event) { }
+
+  onUnfavorite(event) { }
+
+  onInfo(event) {
+    this.dialog.open(ComingSoonComponent)
+  }
+
+  onShare(event) {
     this.dialog.open(ComingSoonComponent)
   }
 }

@@ -1,7 +1,6 @@
 export interface Notebook {
-    cover: {
-        art: String,
-        title: String,
-        fav: Boolean
-    }
+  author: string,
+  game: string,
+  character: string,
+  title: string
 }

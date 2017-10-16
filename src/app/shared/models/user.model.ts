@@ -1,7 +1,6 @@
-import { Shelf } from './shelf.model';
+import { Shelf } from './shelf.model'
 
 export interface User {
-    email: String,
-    shelves: Shelf[],
-    notebooks: String[]
+  email: string,
+  name: string
 }

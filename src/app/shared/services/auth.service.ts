@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core'
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database'
-import { AngularFireAuth } from 'angularfire2/auth'
 import { Router } from '@angular/router'
+
+import { AngularFireAuth } from 'angularfire2/auth'
+import {
+  AngularFirestore,
+  AngularFirestoreCollection
+} from 'angularfire2/firestore'
 import * as firebase from 'firebase'
 
+import { User } from 'app/shared/models'
 
 @Injectable()
 export class AuthService {
 
+  user: AngularFirestoreCollection<User>
   authState: any = null
 
   constructor(private afAuth: AngularFireAuth,
-              private db: AngularFireDatabase,
+              private afs: AngularFirestore,
               private router: Router) {
 
     this.afAuth.authState.subscribe((auth) => {
@@ -85,7 +91,6 @@ export class AuthService {
         throw error})
   }
 
-
   //// Anonymous Auth ////
 
   anonymousLogin() {
@@ -134,7 +139,6 @@ export class AuthService {
       .catch((error) => console.log(error))
   }
 
-
   //// Sign Out ////
 
   signOut(): void {
@@ -142,20 +146,18 @@ export class AuthService {
     this.router.navigate(['/login'])
   }
 
-
   //// Helpers ////
 
   private updateUserData(): void {
   // Writes user name and email to realtime db
   // useful if your app displays information about users or for admin features
 
-    const path = `users/${this.currentUserId}` // Endpoint on firebase
+    this.user = this.afs.collection('users') // Endpoint on firebase
     const data = {
                   email: this.authState.email,
                   name: this.authState.displayName
-                }
+                 }
 
-    this.db.object(path).update(data)
-    .catch(error => console.log(error))
+    this.user.add(data)
   }
 }
