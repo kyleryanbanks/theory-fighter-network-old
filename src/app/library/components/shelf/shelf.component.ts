@@ -39,6 +39,6 @@ export class ShelfComponent {
   }
 
   onShare(event) {
-    this.info.emit(event)
+    this.share.emit(event)
   }
 }
