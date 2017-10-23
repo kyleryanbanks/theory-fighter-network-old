@@ -52,7 +52,10 @@ const MATERIAL_IMPORTS = [
     AddNotebookPageComponent,
   ],
   exports: [
-    LibraryPageComponent
+    LibraryPageComponent,
+    CoverCardComponent,
+    ShelfComponent,
+    LibSpeedDialComponent
   ],
   entryComponents: [
     AddNotebookPageComponent

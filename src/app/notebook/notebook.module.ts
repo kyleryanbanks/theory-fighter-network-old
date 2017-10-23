@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { SharedModule } from 'app/shared'
+import { NotebookRoutingModule } from './notebook-routing.module'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import {
   MovelistComponent,
   NotebookSidebarComponent,
   NotebookCardComponent,
   StickInputComponent,
+  StickButtonsComponent
 } from './components'
 import {
   MdButtonModule,
@@ -29,7 +31,6 @@ import {
 import {
   ComingSoonComponent
 } from 'app/shared/components'
-import { NotebookRoutingModule } from './notebook-routing.module'
 
 const MATERIAL_IMPORTS = [
   MdButtonModule,
@@ -43,7 +44,6 @@ const MATERIAL_IMPORTS = [
   MdGridListModule,
   MdSelectModule,
 ]
-
 
 @NgModule({
   imports: [
@@ -61,7 +61,14 @@ const MATERIAL_IMPORTS = [
     NotebookInterfaceComponent,
     NotebookCardComponent,
     AddNormalPageComponent,
-    StickInputComponent
+    StickInputComponent,
+    StickButtonsComponent
+  ],
+  exports: [
+    StickButtonsComponent,
+    StickInputComponent,
+    NotebookCardComponent,
+    MovelistComponent
   ],
   entryComponents: [
     AddNormalPageComponent

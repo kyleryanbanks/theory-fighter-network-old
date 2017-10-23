@@ -3,6 +3,14 @@ import { createLab } from 'component-lab'
 
 import { CommonModule } from '@angular/common'
 
+import { ReactiveFormsModule } from '@angular/forms'
+import { FlexLayoutModule } from '@angular/flex-layout'
+
+import { LoginModule } from 'app/login'
+import { LibraryModule } from 'app/library'
+import { NotebookModule } from 'app/notebook'
+import { SharedModule } from 'app/shared'
+
 import {
   MdButtonModule,
   MdIconModule,
@@ -31,54 +39,27 @@ const MATERIAL_IMPORTS = [
   MdInputModule,
 ]
 
-import { ReactiveFormsModule } from '@angular/forms'
-import { FlexLayoutModule } from '@angular/flex-layout'
-
-import {
-  SmdFabSpeedDialTrigger,
-  SmdFabSpeedDialActions,
-  SmdFabSpeedDialComponent
-} from 'app/shared/components'
-
-import {
-  SignInComponent,
-  SignUpComponent
-} from 'app/login/components'
-
-import {
-  LibSpeedDialComponent,
-  CoverCardComponent,
-  ShelfComponent
-} from 'app/library/components'
-
 declare var require: any
 
 @NgModule({
-  declarations: [
-    SignInComponent,
-    SignUpComponent,
-    LibSpeedDialComponent,
-    CoverCardComponent,
-    ShelfComponent,
-    SmdFabSpeedDialTrigger,
-    SmdFabSpeedDialActions,
-    SmdFabSpeedDialComponent
-  ],
-  exports: [
-    SignInComponent,
-    SignUpComponent,
-    LibSpeedDialComponent,
-    CoverCardComponent,
-    ShelfComponent
-  ],
   imports: [
-    CommonModule,
     MATERIAL_IMPORTS,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    NotebookModule,
+    LibraryModule,
+    LoginModule
+  ],
+  declarations: [ ],
+  exports: [
+    SharedModule,
+    NotebookModule,
+    LibraryModule,
+    LoginModule
   ],
   providers: [
-  ],
+  ]
 })
 export class LabModule { }
 
