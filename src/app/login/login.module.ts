@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { CommonModule } from '@angular/common'
 import { ReactiveFormsModule } from '@angular/forms'
 import { FlexLayoutModule } from '@angular/flex-layout'
 
@@ -27,9 +27,9 @@ const MATERIAL_IMPORTS = [
 
 @NgModule({
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    BrowserAnimationsModule,
     MATERIAL_IMPORTS
   ],
   declarations: [
@@ -39,7 +39,9 @@ const MATERIAL_IMPORTS = [
     ForgotPasswordComponent
   ],
   exports: [
-    LoginPageComponent
+    LoginPageComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   entryComponents: [
     ForgotPasswordComponent
