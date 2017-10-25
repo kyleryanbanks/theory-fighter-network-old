@@ -1,32 +1,32 @@
-<h2 md-dialog-title>New Character Notebook</h2>
+<h2 mat-dialog-title>New Character Notebook</h2>
 
 <form [formGroup]="form">
-  <md-dialog-content>
-      <md-form-field>
-        <md-placeholder>Game</md-placeholder>
-        <input #game mdInput type="text" disabled value="Marvel vs. Capcom: Infinite">
-      </md-form-field>
-    
-      <md-form-field>
-        <md-placeholder>Title</md-placeholder>
-        <input mdInput type="text" formControlName="title">
-        <md-error>Character notebooks must have a title.</md-error>
-      </md-form-field>
-    
-      <md-form-field>
-        <md-placeholder>Character</md-placeholder>
-        <input mdInput type="text" formControlName="character" [mdAutocomplete]="charactersAuto">
-        <md-error>Must choose a valid character from {{ game.value }}.</md-error>
-      </md-form-field>
-      <md-autocomplete #charactersAuto="mdAutocomplete">
-        <md-option *ngFor="let character of filteredCharacters | async" [value]="character">
-          {{ character }}
-        </md-option>
-      </md-autocomplete>
-  </md-dialog-content>
+  <mat-dialog-content>
+      <mat-form-field>
+        <mat-placeholder>Game</mat-placeholder>
+        <input #game matInput type="text" disabled value="Marvel vs. Capcom: Infinite">
+      </mat-form-field>
 
-  <md-dialog-actions fxLayoutAlign="space-around center">
-    <button md-button md-dialog-close type="button">Cancel</button>
-    <button md-button md-dialog-close type="submit" [disabled]="form.invalid" (click)="addNotebook()">Ok</button>
-  </md-dialog-actions>
+      <mat-form-field>
+        <mat-placeholder>Title</mat-placeholder>
+        <input matInput type="text" formControlName="title">
+        <mat-error>Character notebooks must have a title.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-placeholder>Character</mat-placeholder>
+        <input matInput type="text" formControlName="character" [matAutocomplete]="charactersAuto">
+        <mat-error>Must choose a valid character from {{ game.value }}.</mat-error>
+      </mat-form-field>
+      <mat-autocomplete #charactersAuto="matAutocomplete">
+        <mat-option *ngFor="let character of filteredCharacters | async" [value]="character">
+          {{ character }}
+        </mat-option>
+      </mat-autocomplete>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayoutAlign="space-around center">
+    <button mat-button mat-dialog-close type="button">Cancel</button>
+    <button mat-button mat-dialog-close type="submit" [disabled]="form.invalid" (click)="addNotebook()">Ok</button>
+  </mat-dialog-actions>
 </form>

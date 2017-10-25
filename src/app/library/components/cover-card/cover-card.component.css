@@ -2,7 +2,7 @@
     margin: .25rem;
 }
 
-md-card {
+mat-card {
     width: 150px;
     height: 255px;
     border-radius: 5px;
@@ -19,7 +19,7 @@ img {
     border-radius: 15px;
 }
 
-md-card-actions {
+mat-card-actions {
     margin: 0;
     padding: 0;
 }

@@ -4,8 +4,8 @@ import {
   OnInit
 } from '@angular/core'
 import {
-  MD_DIALOG_DATA,
-  MdDialogRef
+  MAT_DIALOG_DATA,
+  MatDialogRef
 } from '@angular/material'
 import {
   FormControl,
@@ -22,8 +22,8 @@ export class ForgotPasswordComponent implements OnInit {
   error = ''
 
   constructor(
-    private dialogRef: MdDialogRef<ForgotPasswordComponent>,
-    @Inject(MD_DIALOG_DATA) private data: any) {
+    private dialogRef: MatDialogRef<ForgotPasswordComponent>,
+    @Inject(MAT_DIALOG_DATA) private data: any) {
   }
 
   ngOnInit() {

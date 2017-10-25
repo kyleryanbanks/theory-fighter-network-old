@@ -4,7 +4,7 @@ import {
 } from '@angular/core'
 import { Observable } from 'rxjs/Observable'
 import { Router } from '@angular/router'
-import { MdDialog } from '@angular/material'
+import { MatDialog } from '@angular/material'
 
 import { AuthService } from 'app/shared/services'
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component'
@@ -22,7 +22,7 @@ export class LoginPageComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private router: Router,
-    private dialog: MdDialog
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
