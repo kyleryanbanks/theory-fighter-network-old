@@ -1,17 +1,17 @@
-<md-toolbar>
-  <button md-icon-button aria-label="Menu" (click)="sidenav.toggle()">
-    <md-icon aria-hidden="true">menu</md-icon>
+<mat-toolbar>
+  <button mat-icon-button aria-label="Menu" (click)="sidenav.toggle()">
+    <mat-icon aria-hidden="true">menu</mat-icon>
   </button>
   {{ title }}
   <span fxFlex="1 1 auto"></span>
-  <button md-button color="primary" (click)="onLogout()">Logout</button>
-</md-toolbar>
+  <button mat-button color="primary" (click)="onLogout()">Logout</button>
+</mat-toolbar>
 
-<md-sidenav-container>
-  <md-sidenav #sidenav mode="side" [opened]="initOpen">
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [opened]="initOpen">
     <ng-content select=".sidebar"></ng-content>
-  </md-sidenav>
+  </mat-sidenav>
 
   <ng-content select=".content"></ng-content>
 
-</md-sidenav-container>
+</mat-sidenav-container>

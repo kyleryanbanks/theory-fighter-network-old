@@ -1,18 +1,18 @@
 <div fxLayout="column" fxLayoutAlign="start center">
   <p class="mat-caption warn">{{ this.error }}</p>
   <form novalidate [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
-    <md-form-field>
-      <md-placeholder>Email</md-placeholder>
-      <input mdInput formControlName="email" type="email" id="email">
-    </md-form-field>
-    <md-form-field>
-        <md-placeholder>Password</md-placeholder>
-      <input mdInput formControlName="password" type="password" id="password">
-    </md-form-field>
-    <md-form-field>
-        <md-placeholder>Confirm Password</md-placeholder>
-      <input mdInput formControlName="confirmPassword" type="password" id="confirmPassword">
-    </md-form-field>
-    <button md-raised-button type="submit" color="primary">Sign Up</button>
+    <mat-form-field>
+      <mat-placeholder>Email</mat-placeholder>
+      <input matInput formControlName="email" type="email" id="email">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-placeholder>Password</mat-placeholder>
+      <input matInput formControlName="password" type="password" id="password">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-placeholder>Confirm Password</mat-placeholder>
+      <input matInput formControlName="confirmPassword" type="password" id="confirmPassword">
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Sign Up</button>
   </form>
 </div>

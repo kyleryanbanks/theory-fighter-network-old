@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
-import { FlexLayoutModule } from '@angular/flex-layout'
 import {
-  MdToolbarModule,
-  MdButtonModule,
-  MdIconModule,
-  MdSidenavModule,
-  MdListModule
+  MatToolbarModule,
+  MatButtonModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatListModule
 } from '@angular/material'
 import {
   ComingSoonComponent,
@@ -18,11 +17,11 @@ import {
 } from './components'
 
 const MATERIAL_IMPORTS = [
-  MdToolbarModule,
-  MdButtonModule,
-  MdIconModule,
-  MdSidenavModule,
-  MdListModule
+  MatToolbarModule,
+  MatButtonModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatListModule
 ]
 
 
@@ -30,7 +29,6 @@ const MATERIAL_IMPORTS = [
   imports: [
     CommonModule,
     AngularFireDatabaseModule,
-    FlexLayoutModule,
     MATERIAL_IMPORTS
   ],
   declarations: [

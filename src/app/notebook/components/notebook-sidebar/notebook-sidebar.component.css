@@ -1,4 +1,4 @@
-md-icon {
+mat-icon {
     margin-right: 16px;
 }
 
@@ -8,7 +8,7 @@ button {
     text-transform: uppercase
 }
 
-md-nav-list {
+mat-nav-list {
     margin: 0;
     padding: 0
 }
