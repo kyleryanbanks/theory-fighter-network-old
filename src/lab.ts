@@ -4,7 +4,6 @@ import { createLab } from 'component-lab'
 import { CommonModule } from '@angular/common'
 
 import { ReactiveFormsModule } from '@angular/forms'
-import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { LoginModule } from 'app/login'
 import { LibraryModule } from 'app/library'
@@ -12,31 +11,31 @@ import { NotebookModule } from 'app/notebook'
 import { SharedModule } from 'app/shared'
 
 import {
-  MdButtonModule,
-  MdIconModule,
-  MdListModule,
-  MdExpansionModule,
-  MdSidenavModule,
-  MdCardModule,
-  MdTooltipModule,
-  MdDialogModule,
-  MdGridListModule,
-  MdSelectModule,
-  MdInputModule,
+  MatButtonModule,
+  MatIconModule,
+  MatListModule,
+  MatExpansionModule,
+  MatSidenavModule,
+  MatCardModule,
+  MatTooltipModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatSelectModule,
+  MatInputModule,
 } from '@angular/material'
 
 const MATERIAL_IMPORTS = [
-  MdButtonModule,
-  MdIconModule,
-  MdListModule,
-  MdExpansionModule,
-  MdSidenavModule,
-  MdCardModule,
-  MdTooltipModule,
-  MdDialogModule,
-  MdGridListModule,
-  MdSelectModule,
-  MdInputModule,
+  MatButtonModule,
+  MatIconModule,
+  MatListModule,
+  MatExpansionModule,
+  MatSidenavModule,
+  MatCardModule,
+  MatTooltipModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatSelectModule,
+  MatInputModule,
 ]
 
 declare var require: any
@@ -44,7 +43,6 @@ declare var require: any
 @NgModule({
   imports: [
     MATERIAL_IMPORTS,
-    FlexLayoutModule,
     ReactiveFormsModule,
     SharedModule,
     NotebookModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { MdDialog } from '@angular/material'
+import { MatDialog } from '@angular/material'
 import { AddNormalPageComponent } from '../add-normal-page/add-normal-page.component'
 
 @Component({
@@ -9,7 +9,7 @@ import { AddNormalPageComponent } from '../add-normal-page/add-normal-page.compo
 })
 export class NotebookInterfaceComponent implements OnInit {
 
-  constructor(private dialog: MdDialog) { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }

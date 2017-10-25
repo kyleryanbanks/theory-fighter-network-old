@@ -2,25 +2,23 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { SharedModule } from 'app/shared'
 import { NotebookRoutingModule } from './notebook-routing.module'
-import { FlexLayoutModule } from '@angular/flex-layout'
 import {
   MovelistComponent,
   NotebookSidebarComponent,
   NotebookCardComponent,
-  StickInputComponent,
-  StickButtonsComponent
+  StickInputComponent
 } from './components'
 import {
-  MdButtonModule,
-  MdIconModule,
-  MdListModule,
-  MdExpansionModule,
-  MdSidenavModule,
-  MdCardModule,
-  MdTooltipModule,
-  MdDialogModule,
-  MdGridListModule,
-  MdSelectModule,
+  MatButtonModule,
+  MatIconModule,
+  MatListModule,
+  MatExpansionModule,
+  MatSidenavModule,
+  MatCardModule,
+  MatTooltipModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatSelectModule,
 } from '@angular/material'
 import {
   BasicsPageComponent,
@@ -33,16 +31,16 @@ import {
 } from 'app/shared/components'
 
 const MATERIAL_IMPORTS = [
-  MdButtonModule,
-  MdCardModule,
-  MdIconModule,
-  MdListModule,
-  MdExpansionModule,
-  MdSidenavModule,
-  MdTooltipModule,
-  MdDialogModule,
-  MdGridListModule,
-  MdSelectModule,
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatListModule,
+  MatExpansionModule,
+  MatSidenavModule,
+  MatTooltipModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatSelectModule,
 ]
 
 @NgModule({
@@ -50,8 +48,7 @@ const MATERIAL_IMPORTS = [
     CommonModule,
     SharedModule,
     MATERIAL_IMPORTS,
-    NotebookRoutingModule,
-    FlexLayoutModule
+    NotebookRoutingModule
   ],
   declarations: [
     MovelistComponent,
@@ -61,11 +58,9 @@ const MATERIAL_IMPORTS = [
     NotebookInterfaceComponent,
     NotebookCardComponent,
     AddNormalPageComponent,
-    StickInputComponent,
-    StickButtonsComponent
+    StickInputComponent
   ],
   exports: [
-    StickButtonsComponent,
     StickInputComponent,
     NotebookCardComponent,
     MovelistComponent

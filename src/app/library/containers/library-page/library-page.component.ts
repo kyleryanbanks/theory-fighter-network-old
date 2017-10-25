@@ -3,7 +3,7 @@ import {
   OnInit
 } from '@angular/core'
 import { Router } from '@angular/router'
-import { MdDialog } from '@angular/material'
+import { MatDialog } from '@angular/material'
 
 import { AddNotebookPageComponent } from '../add-notebook-page/add-notebook-page.component'
 import { ComingSoonComponent } from 'app/shared/components'
@@ -28,7 +28,7 @@ export class LibraryPageComponent implements OnInit {
 
   constructor(
     private afs: AngularFirestore,
-    private dialog: MdDialog,
+    private dialog: MatDialog,
     private auth: AuthService,
     private router: Router
   ) {

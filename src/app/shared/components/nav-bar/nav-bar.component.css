@@ -2,18 +2,18 @@ button {
     text-transform: uppercase;
 }
 
-md-toolbar {
+mat-toolbar {
     position: fixed;
     top: 0;
     z-index: 999;
 }
 
-md-sidenav-container {
+mat-sidenav-container {
     margin-top: 64px;
     height: calc(100vh - 64px);
 }
 
-md-sidenav {
+mat-sidenav {
     height: 100%;
     width: 250px;
 }
