@@ -1,6 +1,7 @@
 @import '~@angular/material/theming';
 $roboto-font-path: '~roboto-fontface/fonts';
 @import '~roboto-fontface/css/roboto/sass/roboto-fontface.scss';
+@import '~material-design-icons/iconfont/material-icons.css';
 
 @include mat-core();
 
@@ -56,4 +57,3 @@ overflow-x: hidden;
 .bg-warn {
   background-color: mat-color($tfn-warn)
 }
-
