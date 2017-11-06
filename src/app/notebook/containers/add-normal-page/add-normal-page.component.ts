@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { FormBuilder } from '@angular/forms'
 
 @Component({
   selector: 'tfn-add-normal-page',
@@ -7,9 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddNormalPageComponent implements OnInit {
 
-  constructor() { }
+  form = this.fb.group({
+    jumping: false,
+    followups: false,
+    moveType: 'Normals'
+  })
+  moveTypes = [
+    'Normals',
+    'Specials',
+    'Supers',
+  ]
+  input = '...'
+  direction = ''
+  command = ''
+
+  constructor(
+    private fb: FormBuilder,
+  ) { }
 
   ngOnInit() {
   }
 
+  onDirection(direction) {
+    this.direction = direction
+  }
+
+  onCommand(command) {
+    this.command = command
+  }
 }

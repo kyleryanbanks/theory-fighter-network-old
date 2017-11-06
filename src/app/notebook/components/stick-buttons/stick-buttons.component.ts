@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, forwardRef } from '@angular/core'
+import { Component, OnInit, Input, forwardRef, Output, EventEmitter } from '@angular/core'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 
 @Component({
@@ -15,8 +15,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 })
 export class StickButtonsComponent implements OnInit, ControlValueAccessor {
   @Input() buttons: string[]
+  @Output() command = new EventEmitter()
   buttonStates: { [button: string]: boolean } = {}
-  command: string
+  _command: string
 
   constructor() { }
 
@@ -32,17 +33,17 @@ export class StickButtonsComponent implements OnInit, ControlValueAccessor {
   }
 
   updateCommand() {
-    this.command = ''
+    this._command = ''
     for (const button of this.buttons) {
       if (this.buttonStates[button]) {
-        this.command += this.command ? '+' + button : button
+        this._command += this._command ? '+' + button : button
       }
     }
-    this.writeValue(this.command)
+    this.command.emit(this._command)
   }
 
   writeValue(command: string) {
-    this.command = command
+    this._command = command
   }
 
   registerOnChange() { }

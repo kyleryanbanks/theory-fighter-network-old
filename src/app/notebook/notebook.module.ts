@@ -13,6 +13,7 @@ import {
 import {
   MatButtonModule,
   MatIconModule,
+  MatCheckboxModule,
   MatListModule,
   MatExpansionModule,
   MatSidenavModule,
@@ -37,6 +38,7 @@ const MATERIAL_IMPORTS = [
   MatCardModule,
   MatIconModule,
   MatListModule,
+  MatCheckboxModule,
   MatExpansionModule,
   MatSidenavModule,
   MatTooltipModule,

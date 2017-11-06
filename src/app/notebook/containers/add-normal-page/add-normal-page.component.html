@@ -1,15 +1,41 @@
 <h1 class="mat-display-2">Add New Input</h1>
-<mat-dialog-content>
-  <div class="stick_input">
-    <tfn-stick-input></tfn-stick-input>
-  </div>
+<form (submit)="onSubmit($events)" [formGroup]="form">
+  <mat-dialog-content>
+    <div class="stick">
+      <tfn-stick-input
+        (direction)="onDirection($event)"></tfn-stick-input>
+      <tfn-stick-buttons
+        [buttons]="['LP', 'LK', 'HP', 'HK', 'T', 'S']"
+        (command)="onCommand($event)"></tfn-stick-buttons>
+    </div>
+    <mat-checkbox color='primary' align='end' formControlName="jumping">Jumping</mat-checkbox>
+    
+    <div>
+      Adding <strong>{{ form.get('jumping').value ? 'j.' : '' }}{{ direction }} {{ command }} </strong> to: 
+      <mat-form-field>
+        <mat-select
+        value="moveType"
+        formControlName="moveType">
+          <mat-option
+            *ngFor='let move of moveTypes'
+            [value]='move'>
+            {{move}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-  <div class="radioList">
-    Jumping
-    Has Followups
-  </div>
-</mat-dialog-content>
-<mat-dialog-actions>
-  Adding INPUT to LOCATION DROPDOWN
-</mat-dialog-actions>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <mat-checkbox align='end'>Add Another</mat-checkbox>
+    <button mat-button>
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      color="primary">
+      OK
+    </button>
+  </mat-dialog-actions>
+</form>
 

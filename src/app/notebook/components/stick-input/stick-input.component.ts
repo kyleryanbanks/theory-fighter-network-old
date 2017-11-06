@@ -11,13 +11,34 @@ export class StickInputComponent implements OnInit {
   @Output() direction = new EventEmitter
   inputs = [7, 8, 9, 4, 5, 6, 1, 2, 3]
   specials = [
-    'Down Down',
-    'Dragon Punch Forward',
-    'Dragon Punch Backward',
-    'Half-Circle Forward',
-    'Half-Circle Backward',
-    'Quarter-Circle Forward',
-    'Quarter-Circle Backward'
+    {
+      value: '22',
+      display: '(DD) Down Down'
+    },
+    {
+      value: '623',
+      display: '(DPF) Dragon Punch Forwards'
+    },
+    {
+      value: '421',
+      display: '(DPB) Dragon Punch Backwards'
+    },
+    {
+      value: '41236',
+      display: '(HCF) Half-Circle Forward'
+    },
+    {
+      value: '53214',
+      display: '(HCB) Half-Circle Backward'
+    },
+    {
+      value: '236',
+      display: '(QCF) Quarter-Circle Forward'
+    },
+    {
+      value: '214',
+      display: '(QCB) Quarter-Circle Backward'
+    }
   ]
   specialSelect = new FormControl
 
@@ -33,6 +54,7 @@ export class StickInputComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.selected = 5
   }
 
   onClick(input) {
