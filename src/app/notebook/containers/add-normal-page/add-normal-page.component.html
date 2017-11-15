@@ -9,6 +9,7 @@
         (command)="onCommand($event)"></tfn-stick-buttons>
     </div>
     <mat-checkbox color='primary' align='end' formControlName="jumping">Jumping</mat-checkbox>
+    <mat-checkbox color='primary' align='end' formControlName="jumping">Follows</mat-checkbox>
     
     <div>
       Adding <strong>{{ form.get('jumping').value ? 'j.' : '' }}{{ direction }} {{ command }} </strong> to: 
