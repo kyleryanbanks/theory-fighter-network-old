@@ -6,6 +6,7 @@ button {
 div {
   display: grid;
   grid-template-rows: repeat(2, 60px);
+  grid-auto-columns: 50px;
   grid-gap: 10px;
   grid-auto-flow: column;
 }
