@@ -2,15 +2,18 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { SharedModule } from 'app/shared'
 import { NotebookRoutingModule } from './notebook-routing.module'
+import { ReactiveFormsModule } from '@angular/forms'
 import {
   MovelistComponent,
   NotebookSidebarComponent,
   NotebookCardComponent,
-  StickInputComponent
+  StickInputComponent,
+  StickButtonsComponent
 } from './components'
 import {
   MatButtonModule,
   MatIconModule,
+  MatCheckboxModule,
   MatListModule,
   MatExpansionModule,
   MatSidenavModule,
@@ -35,6 +38,7 @@ const MATERIAL_IMPORTS = [
   MatCardModule,
   MatIconModule,
   MatListModule,
+  MatCheckboxModule,
   MatExpansionModule,
   MatSidenavModule,
   MatTooltipModule,
@@ -48,7 +52,8 @@ const MATERIAL_IMPORTS = [
     CommonModule,
     SharedModule,
     MATERIAL_IMPORTS,
-    NotebookRoutingModule
+    NotebookRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [
     MovelistComponent,
@@ -58,12 +63,14 @@ const MATERIAL_IMPORTS = [
     NotebookInterfaceComponent,
     NotebookCardComponent,
     AddNormalPageComponent,
-    StickInputComponent
+    StickInputComponent,
+    StickButtonsComponent
   ],
   exports: [
     StickInputComponent,
     NotebookCardComponent,
-    MovelistComponent
+    MovelistComponent,
+    StickButtonsComponent
   ],
   entryComponents: [
     AddNormalPageComponent

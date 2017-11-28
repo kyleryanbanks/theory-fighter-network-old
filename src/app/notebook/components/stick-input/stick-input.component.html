@@ -1,23 +1,23 @@
-<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3em">
-  <div class="stick">
-    <mat-grid-list cols="3" gutterSize=".5em">
-      <mat-grid-tile colspan="3">
-        <mat-select placeholder="Specials">
-          <mat-option>
-            Foo
-          </mat-option>
-        </mat-select>
-      </mat-grid-tile>
-      <mat-grid-tile class="mat-title input bg-primary">1</mat-grid-tile>
-      <mat-grid-tile class="mat-title input bg-primary">2</mat-grid-tile>
-      <mat-grid-tile class="mat-title input bg-primary">3</mat-grid-tile>
-      <mat-grid-tile class="mat-title input bg-primary">4</mat-grid-tile>
-      <mat-grid-tile class="mat-title input bg-primary">5</mat-grid-tile>
-      <mat-grid-tile class="mat-title input bg-primary">6</mat-grid-tile>
-      <mat-grid-tile class="mat-title input bg-primary">7</mat-grid-tile>
-      <mat-grid-tile class="mat-title input bg-primary">8</mat-grid-tile>
-      <mat-grid-tile class="mat-title input bg-primary">9</mat-grid-tile>
-    </mat-grid-list>
-  </div>
-
+<div class="grid-container">
+  <mat-form-field>
+    <mat-select
+      placeholder="Specials"
+      (change)=onSelect($event)
+      [formControl]="specialSelect">
+      <mat-option
+        *ngFor='let special of specials'
+        [value]='special.value'>
+        {{special.display}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    type="button"
+    class="grid-input mat-elevation-z0"
+    *ngFor="let input of inputs"
+    [color]="selected === input? 'warn' : 'primary'"
+    (click)=onClick(input)>
+    {{input}}
+  </button>
 </div>

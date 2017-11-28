@@ -2,6 +2,10 @@ button {
     text-transform: uppercase;
 }
 
+span {
+    flex: 1 1 auto;
+}
+
 mat-toolbar {
     position: fixed;
     top: 0;

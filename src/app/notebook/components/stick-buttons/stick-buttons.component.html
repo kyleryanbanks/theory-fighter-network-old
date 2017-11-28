@@ -1,0 +1,11 @@
+<div>
+  <button
+    mat-fab
+    type="button"
+    *ngFor="let button of buttons"
+    class="mat-elevation-z0"
+    [color]=" buttonStates[button] ? 'warn' : 'primary' "
+    (click)="toggleButton(button)">
+    {{button}}
+  </button>
+</div>

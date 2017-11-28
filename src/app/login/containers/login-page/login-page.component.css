@@ -1,6 +1,9 @@
 div {
     padding: 1rem;
     text-align: center;
+    width: 50%;
+    margin: auto;
+    min-width: 300px;
 }
 
 h1 {
