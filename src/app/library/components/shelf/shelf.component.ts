@@ -8,8 +8,31 @@ import {
 
 @Component({
   selector: 'tfn-shelf',
-  templateUrl: './shelf.component.html',
-  styleUrls: ['./shelf.component.css']
+  template: `
+  <span class="mat-title">{{title}}</span>
+  <div>
+    <tfn-cover-card
+      *ngFor="let notebook of notebooks"
+      (cover)="onCover($event)"
+      (favorite)="onFavorite($event)"
+      (unfavorite)="onUnfavorite($event)"
+      (info)="onInfo($event)"
+      (share)="onShare($event)"
+      [notebook]="notebook"></tfn-cover-card>
+  </div>
+  `,
+  styles: [`
+    section {
+      padding: 1rem;
+    }
+
+    div {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fit, 150px);
+        justify-content: center;
+    }
+  `]
 })
 export class ShelfComponent {
   @Input() title: string
@@ -27,7 +50,7 @@ export class ShelfComponent {
   }
 
   onFavorite(event) {
-      this.favorite.emit(event)
+    this.favorite.emit(event)
   }
 
   onUnfavorite(event) {

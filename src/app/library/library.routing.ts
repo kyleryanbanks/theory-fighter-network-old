@@ -8,12 +8,12 @@ const routes: Routes = [
   {
     path: 'library',
     component: LibraryPageComponent,
-    canActivate: [ AuthGuard ]
-  }
-];
+    canActivate: [AuthGuard],
+  },
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class LibraryRoutingModule { }
+export class LibraryRoutingModule {}

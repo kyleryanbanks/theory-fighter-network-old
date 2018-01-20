@@ -12,7 +12,10 @@
     <mat-checkbox color='primary' align='end' formControlName="jumping">Follows</mat-checkbox>
     
     <div>
-      Adding <strong>{{ form.get('jumping').value ? 'j.' : '' }}{{ direction }} {{ command }} </strong> to: 
+      Adding: <strong>{{ form.get('jumping').value ? 'j.' : '' }}{{ direction }} {{ command }} </strong>
+    </div>
+    <div>
+      To: 
       <mat-form-field>
         <mat-select
         value="moveType"

@@ -1,4 +1,4 @@
-export interface Notebook {
+export interface NotebookModel {
   author: string,
   game: string,
   character: string,
