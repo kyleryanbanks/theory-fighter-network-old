@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from 'app/shared'
+import { StoreModule } from '@ngrx/store'
+import { EffectsModule } from '@ngrx/effects'
+import { EFFECTS } from './effects'
+import { featureKey, reducer } from './reducers/library.reducer'
 import {
   MatToolbarModule,
   MatButtonModule,
@@ -10,18 +14,16 @@ import {
   MatCardModule,
   MatTooltipModule,
   MatInputModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
 } from '@angular/material'
+import { LibraryPageComponent } from './containers'
 import {
-  LibraryPageComponent,
-  AddNotebookPageComponent,
- } from './containers'
-import {
-  ShelfComponent,
+  AddNotebookComponent,
   CoverCardComponent,
-  LibSpeedDialComponent
+  LibSpeedDialComponent,
+  ShelfComponent,
 } from './components'
-import { LibraryRoutingModule } from './library-routing.module'
+import { LibraryRoutingModule } from './library.routing'
 
 const MATERIAL_IMPORTS = [
   MatToolbarModule,
@@ -37,26 +39,26 @@ const MATERIAL_IMPORTS = [
 @NgModule({
   imports: [
     CommonModule,
+    StoreModule.forFeature(featureKey, reducer),
+    EffectsModule.forFeature(EFFECTS),
     SharedModule,
     ReactiveFormsModule,
     LibraryRoutingModule,
-    MATERIAL_IMPORTS
+    MATERIAL_IMPORTS,
   ],
   declarations: [
     LibraryPageComponent,
     CoverCardComponent,
     ShelfComponent,
     LibSpeedDialComponent,
-    AddNotebookPageComponent,
+    AddNotebookComponent,
   ],
   exports: [
     LibraryPageComponent,
     CoverCardComponent,
     ShelfComponent,
-    LibSpeedDialComponent
+    LibSpeedDialComponent,
   ],
-  entryComponents: [
-    AddNotebookPageComponent
-  ]
+  entryComponents: [AddNotebookComponent],
 })
-export class LibraryModule { }
+export class LibraryModule {}

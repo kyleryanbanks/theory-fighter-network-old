@@ -6,6 +6,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth'
 import { AngularFirestoreModule } from 'angularfire2/firestore'
 import { environment } from '../environments/environment'
 
+import { StoreModule } from '@ngrx/store'
+import { EffectsModule } from '@ngrx/effects'
+
 /* Feature Modules */
 import { LoginModule } from './login'
 import { LibraryModule } from './library'
@@ -17,16 +20,15 @@ import { AuthGuard } from 'app/shared/guards'
 
 /* Routing Module */
 import { AppComponent } from './app.component'
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app.routing'
 import { WildcardRoutingModule } from './wildcard-routing.module'
 
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserAnimationsModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
@@ -34,13 +36,9 @@ import { WildcardRoutingModule } from './wildcard-routing.module'
     LibraryModule,
     LoginModule,
     NotebookModule,
-    WildcardRoutingModule
+    WildcardRoutingModule,
   ],
-  providers: [
-    AuthService,
-    AuthGuard
-  ],
-  bootstrap: [AppComponent]
+  providers: [AuthService, AuthGuard],
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}

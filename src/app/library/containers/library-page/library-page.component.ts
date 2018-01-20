@@ -1,55 +1,55 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { Store } from '@ngrx/store'
 import { Router } from '@angular/router'
-import { MatDialog } from '@angular/material'
 
-import { AddNotebookPageComponent } from '../add-notebook-page/add-notebook-page.component'
-import { ComingSoonComponent } from 'app/shared/components'
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore'
-import { Observable } from 'rxjs/observable'
-
-import { AuthService } from 'app/shared/services'
-import { Notebook } from 'app/shared/models'
+import { NotebookModel } from '../../models'
+import { State } from '../../reducers/library.reducer'
+import * as fromLibrary from '../../reducers'
+import { Library } from '../../actions'
 
 
 @Component({
   selector: 'tfn-library-page',
-  templateUrl: './library-page.component.html',
-  styleUrls: ['./library-page.component.css']
+  template: `
+  <tfn-nav-bar title="Library">
+    <div class="content" fxLayout="column">
+      <tfn-shelf
+        (cover)="onCover($event)"
+        (favorite)="onFavorite($event)"
+        (unfavorite)="onUnfavorite($event)"
+        (info)="onInfo($event)"
+        (share)="onShare($event)"
+        title="All Notebooks"
+        [notebooks]="notebooks$ | async"></tfn-shelf>
+      <tfn-lib-speed-dial
+        (addNotebook)="onAddNotebook($event)"></tfn-lib-speed-dial>
+    </div>
+  </tfn-nav-bar>
+  `,
+  styles: [`
+    tfn-lib-speed-dial {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    div {
+        margin: 12px;
+    }
+  `]
 })
 export class LibraryPageComponent implements OnInit {
-  uid: String
-  recent = []
-  favorites = []
-  notebooksCollection: AngularFirestoreCollection<Notebook>
-  notebooks: Observable<Notebook[]>
 
-  constructor(
-    private afs: AngularFirestore,
-    private dialog: MatDialog,
-    private auth: AuthService,
-    private router: Router
-  ) {
-  }
+  constructor(private store: Store<State>, private router: Router) {}
+
+  notebooks$ = this.store.select(fromLibrary.selectLibraryNotebooks)
 
   ngOnInit() {
-    this.notebooksCollection = this.afs.collection('notebooks')
-    this.notebooks = this.notebooksCollection.valueChanges()
-    this.uid = this.auth.currentUserId
+    this.store.dispatch(new Library.Enter())
   }
 
   onAddNotebook() {
-    this.dialog.open(AddNotebookPageComponent)
-  }
-
-  onAddShelf() {
-    this.dialog.open(ComingSoonComponent)
-  }
-
-  onAddTeam() {
-    this.dialog.open(ComingSoonComponent)
+    this.store.dispatch(new Library.AddNotebook())
   }
 
   onCover(event) {
@@ -60,11 +60,7 @@ export class LibraryPageComponent implements OnInit {
 
   onUnfavorite(event) { }
 
-  onInfo(event) {
-    this.dialog.open(ComingSoonComponent)
-  }
+  onInfo(event) { }
 
-  onShare(event) {
-    this.dialog.open(ComingSoonComponent)
-  }
+  onShare(event) { }
 }
